@@ -1,0 +1,121 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 10 08:28:24 2015
+
+@author: Kristof Govaerts
+
+This script uses an affine registration algorithm to repeatedly register a 
+set of images to an atlas or reference image, and uses a brain mask (in atlas space)
+to find where the brain is in native space. Brain masks are initially 
+dilated quite a lot to account for imperfect registration, but are iteratively 
+reduced in size as the registration gets more accurate.
+"""
+
+import os
+import nibabel as nib
+import pylab as pl
+import numpy as np
+from datetime import datetime
+import glob
+import Tkinter, tkFileDialog
+import subprocess
+import scipy.ndimage as ndi
+from skimage import filter
+
+#Globals
+N_ITERATIONS = 1
+
+#functions
+def RegAndResample(ref, atl, mode=affine):
+    '''Registers [atl] into [ref] space and resamples [ref] into [atl] space.
+    Inputs should be image paths to feed into FSL.'''
+    omat = os.path.join(os.getcwd(), 'temp_omat.mat')    
+    out = os.path.join(os.getcwd(), ref[:-4] + '_A.hdr') 
+    if mode == 'affine':
+        flirt = 'flirt -in %s -ref %s -out %s -omat %s -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear' %(atl, ref, out, omat)  
+    elif mode == 'rigid':
+        flirt = 'flirt -in %s -ref %s -out %s -omat %s -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6  -interp trilinear' %(atl, ref, out, omat)  
+    resample = 'flirt -in %s -ref %s -out %s -init %s -applyxfm' %(mask, ref, outm, omat)
+    
+    subprocess.call(flirt, shell=True)
+    subprocess.call(resample, shell=True)
+    os.remove(out)
+    os.remove(omat)
+    return outm
+    
+def otsu_filter(img, background=0):
+    flat = (img.flatten())[img.flatten()>background]
+    thresh = filter.threshold_otsu(flat)
+    im2 = np.copy(img)
+    im2[im2<=thresh]=0
+    return im2
+
+#Main loop
+print "Enter the scan directory. This directory should contain all scans except for the reference image, and no other scans."
+root = Tkinter.Tk()
+while True:
+    rootdir = tkFileDialog.askdirectory(initialdir="/",title='Please select a directory')
+    if os.path.isdir(rootdir) is True: #Checks if entered dir exists
+        os.chdir(rootdir)
+        root.destroy()
+        break
+    else:
+        print "Pathname invalid. Try again."
+        continue
+
+os.chdir(rootdir)
+
+print "Select your reference image (Will be used as float for the registration)"
+
+root = Tkinter.Tk()
+while True:
+    refim = tkFileDialog.askopenfilename(initialdir=rootdir,title='Please select a file')
+    root.destroy()
+    break
+
+#rootdir = '/media/sf_host/data/NRR/Raw_data/test_FSL'
+#os.chdir(rootdir)
+#refim = '/media/sf_host/data/NRR/Raw_data/Bl6_Ref_ER.hdr'
+#maskim = '/media/sf_host/data/NRR/Raw_data/Bl6_ref_ER_BNL_lbl_BM.hdr'
+
+filelist = glob.glob('*.hdr')
+print "Root dir:", os.getcwd()
+print "Atlas image:", refim
+
+for i, f in enumerate(filelist):
+    print "file %s of %s." %(i+1, len(filelist))
+    im = nib.load(f)
+    data = im.get_data()
+    affine = im.get_affine()
+    
+    temp_nif = nib.Nifti1Image(im.get_data(), affine)
+    nib.save(temp_nif, 'temp_nif.nii')
+    out = os.path.join(rootdir, f[:-4]+'_reg')  
+    mask = os.path.join(rootdir, f[:-4]+'_reg')  
+    
+    for it in range(N_ITERATIONS):
+        print "Trying to create a brain mask through affine registration. Iteration %s of %s." %(it+1, N_ITERATIONS)
+        in_img = os.path.join(rootdir, 'temp_nif.nii')  
+        outm = RegAndResample(in_img, refim, maskim) #one registration step
+        mim = nib.load(outm).get_data()
+        if it != N_ITERATIONS-1:
+            dilated = ndi.binary_dilation(mim, iterations=3 + N_ITERATIONS - it)
+            ndata = np.squeeze(data)*dilated
+            ndata = otsu_filter(ndata) #apply otsu filter, excluding voxels with value 0
+        else:
+            dilated = ndi.binary_dilation(mim, iterations=1)
+            ndata = np.squeeze(data)*dilated
+        
+        temp_nif = nib.Nifti1Image(ndata, affine)
+        os.remove('temp_nif.nii')
+        nib.save(temp_nif, 'temp_nif.nii')
+        
+    
+    os.remove('temp_nif.nii')
+    #save brain img
+    ana = nib.AnalyzeImage(ndata, affine)
+    nib.save(ana, f[:-4]+'_brain.hdr')
+    #save mask img
+    masknif = nib.Nifti1Image(mim.astype('int16'), affine)
+    nib.save(masknif, f[:-4]+'_Bmask.nii') 
+        
