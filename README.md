@@ -8,3 +8,7 @@ The file to run here is titled **ProcessImages.py**. It is dependent on several 
 ## Conversion
 
 Contains some useful tools for converting data from Bruker to Nifti as well as for sorting scans. 
+
+## CEST
+
+Contains the required tools for CEST processing (ie b0 correction etc)
