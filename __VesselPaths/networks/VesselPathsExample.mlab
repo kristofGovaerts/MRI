@@ -1,0 +1,6 @@
+module VesselPaths {
+  fields  {
+    instanceName = VesselPaths
+  }
+
+}

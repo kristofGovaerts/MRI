@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! VesselPaths module definition
+/*!
+// \file    VesselPaths.def
+// \author  Kristof Govaerts
+// \date    2014-03-31
+*/
+//----------------------------------------------------------------------------------
+
+MacroModule VesselPaths {
+  genre = "AnalysisMain"
+  author = "Kristof Govaerts"
+  comment = ""
+  keywords = ""
+  seeAlso = ""
+  exampleNetwork = "$(LOCAL)/networks/VesselPathsExample.mlab"
+   
+  externalDefinition = "$(LOCAL)/VesselPaths.script"
+
+}

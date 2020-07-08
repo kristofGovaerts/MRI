@@ -1,0 +1,1236 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-203 805 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "805 309 324 521"
+        sizeHint = "324 521"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = float
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "-143 685 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "848 537 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic1
+    function = Multiply
+    constant = 59.3124959054
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "41 773 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1324 200 939 757"
+        sizeHint = "939 757"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = "C:/Users/u0091609/Desktop/Alzheimer projects/FVL_biAT/FVL_biAT_1y/Late2013/TurboRARE3D/FVL_33776_1L_1R_a_me1_6_1.hdr"
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = 59.3124959054
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = ""
+    wakeUpCode = ""
+    code = "*t=ctx.field("in0").value[:-4] + ".txt"
+
+with open(t) as f:
+	l=f.readlines()[32]
+	l=float(l[l.find('[')+1:-2])
+
+ctx.field("out0").value=l
+
+*"
+  }
+}
+module CSOLoad {
+  internal  {
+    frame = "141 349 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "557 425 500 108"
+        sizeHint = "500 108"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOLoad
+    updateMode = Off
+    autoApply = TRUE
+    isProcessing = FALSE
+    fileName = ""
+    status = "File name is empty!"
+    loadSuccess = FALSE
+  }
+}
+module CSOSave {
+  internal  {
+    frame = "677 189 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "557 425 500 108"
+        sizeHint = "500 108"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOSave
+    updateMode = Off
+    autoApply = FALSE
+    isProcessing = FALSE
+    fileName = ""
+    status = "Valid CSOList attached."
+    saveSuccess = FALSE
+    binary = TRUE
+    listenToFinishedNotifications = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "653 -75 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "591 183 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 179 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Calculator {
+  internal  {
+    frame = "-491 285 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "76 69 700 656"
+        sizeHint = "700 656"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "116 148 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Calculator
+    statusBar = ""
+    exp1 = "d1*d4 + d2 * d5 + d3"
+    exp2 = ""
+    exp3 = ""
+    exp4 = ""
+    exp5 = ""
+    exp6 = ""
+    exp7 = ""
+    exp8 = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    f1 = 0
+    f2 = 0
+    f3 = 0
+    f4 = 0
+    f5 = 0
+    f6 = 0
+    ld1 = 0
+    ld2 = 0
+    ld3 = 0
+    ld4 = 0
+    ld5 = 0
+    ld6 = 0
+    v1 = "0 0 0"
+    v2 = "0 0 0"
+    v3 = "0 0 0"
+    v4 = "0 0 0"
+    v5 = "0 0 0"
+    v6 = "0 0 0"
+    applyMode = AutoApply
+    exp1Comment = ""
+    exp2Comment = ""
+    exp3Comment = ""
+    exp4Comment = ""
+    exp5Comment = ""
+    exp6Comment = ""
+    exp7Comment = ""
+    exp8Comment = ""
+    scalarVariablesComment = ""
+    vectorVariablesComment = ""
+    resultVector1_x = 0
+    resultVector1_y = 0
+    resultVector1_z = 0
+    resultVector2_x = 0
+    resultVector2_y = 0
+    resultVector2_z = 0
+    resultVector3_x = 0
+    resultVector3_y = 0
+    resultVector3_z = 0
+    resultVector4_x = 0
+    resultVector4_y = 0
+    resultVector4_z = 0
+    resultVector5_x = 0
+    resultVector5_y = 0
+    resultVector5_z = 0
+    resultVector6_x = 0
+    resultVector6_y = 0
+    resultVector6_z = 0
+    resultVector7_x = 0
+    resultVector7_y = 0
+    resultVector7_z = 0
+    resultVector8_x = 0
+    resultVector8_y = 0
+    resultVector8_z = 0
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "-207 933 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _automatic {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "1207 500 303 365"
+        sizeHint = "303 341"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageLoad
+    filename = "C:/Users/u0091609/Desktop/Alzheimer projects/FVL_biAT/FVL_biAT_1y/Late2013/TurboRARE3D/FVL_33776_1L_1R_a_me1_6_1.hdr"
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module ROISelect {
+  internal  {
+    frame = "-323 557 88 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "294 148 1367 834"
+        sizeHint = "490 392"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "994 253 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ROISelect
+    editMode = Edit
+    editModeFieldDisable = FALSE
+    startWorldPos = "1.171875 22.453125 6.83747482299805"
+    endWorldPos = "-0.234375 23.296875 8.34643459320068"
+    startVoxelX = 12
+    startVoxelY = 239
+    startVoxelZ = 72
+    endVoxelX = -3
+    endVoxelY = 248
+    endVoxelZ = 88
+    boxOn = TRUE
+    boxShiftListen = RELEASED
+    boxCtrlListen = RELEASED
+    boxBlend = 0.14
+    boxColor = "1 0.979525029659271 0.38740399479866"
+    allowDraw = TRUE
+    currentPosOn = Navigate
+    currentPos = "7.5 12 4.14964008331299"
+    currentPosShiftListen = PRESSED
+    currentPosCtrlListen = RELEASED
+    currentPosColor = "1 1 1"
+    allTimepoints = TRUE
+    timepoint = 0
+    reset = FALSE
+    layout = LAYOUT_ROW_EQUAL
+    greyWidth = 1
+    greyCenter = 0.5
+    annotationColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    usePreview = FALSE
+    restriction = MaxMBytesIsotropic
+    limit = 10
+    unit = ""
+    worldPosition = "8.765625 12.140625 1.36749505996704"
+    useGlobalInputImage = TRUE
+    extraViewLowerLeft = "0 0"
+    extraViewUpperRight = "1 1"
+    annotationOn = TRUE
+    annotShowAnnot = ANNO_SHOW_HIDE
+    annotFontSize = ANNO_SIZE_AUTO
+    annotShowOrientation = ANNO_ORIENTATION_SIZE_WEIGHTED
+    annotVerticalRuler = TRUE
+    annotHorizontalRuler = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "-411 425 120 64"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "455 473 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "650 262 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StdDevNoise
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module CSOConvertToImage {
+  internal  {
+    frame = "557 69 152 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "478 261 440 479"
+        sizeHint = "440 479"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOConvertToImage
+    updateMode = AutoUpdate
+    autoApply = TRUE
+    isProcessing = FALSE
+    foregroundValue = 4095
+    backgroundValue = 0
+    useImageValues = FALSE
+    fillSurface = TRUE
+    copyInputImage = FALSE
+    listenInteractionNotifications = FALSE
+    listenInteractionFinished = TRUE
+    boundingBoxMargin = 0
+    voxelizeCSO = FALSE
+    removeOutsideVoxels = FALSE
+    useAntiAliasing = FALSE
+    useGlobalSubsample = TRUE
+    antiAliasSubSample = 4
+    antiAliasSubSampleX = 4
+    antiAliasSubSampleY = 4
+    antiAliasSubSampleZ = 4
+    removeBorderVoxelsByVolume = FALSE
+    removeBorderVoxelVolumeThreshold = 0.6
+    ignoreTimePoints = FALSE
+    drawToAllTimePoints = TRUE
+    createMarkerList = FALSE
+    markerGenerationMode = CSOMarkerGenerationModeFromVoxels
+    createCSOVoxelSet = FALSE
+    voxelSetMode = VoxelSetModeReplaceMax
+    generationMode = GenerationModeComplete
+    numThreads = 1
+    removeOutsideVoxelsMode = Disabled
+  }
+}
+module SoView2DCSOEditor {
+  internal  {
+    frame = "253 85 152 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "483 325 620 622"
+        sizeHint = "620 622"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DCSOEditor
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 24
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    shouldListenToRepaintEvents = FALSE
+    shouldListenToSelectionChangedEvents = TRUE
+    shouldListenToFinishedEvents = TRUE
+    generalInteractionMode = INTERACTION_MODE_EDIT
+    generalInteractionModeToggleKey = TOGGLE_MODE_ALT
+    useAntiAliasing = TRUE
+    useInterpolationTargetColor = TRUE
+    interpolationTargetColor = "1 0 0"
+    showCSOsOnAllTimePoints = TRUE
+    showBoundingBox = FALSE
+    boundingBoxAlpha = 0.5
+    boundingBoxColor = "1 1 1"
+    showOnlyParallelCSOs = FALSE
+    showParallelThickness = 0.1
+    shouldLevelCSO = FALSE
+    useStylePalette = FALSE
+    stylePaletteUseIndexAs = USE_INDEX_FOR_CSO
+    labelShowMode = LABEL_SHOW_NONE
+    labelAlignmentMode = LABEL_ALIGN_CENTER
+    labelUnitScale = LABEL_UNIT_SCALE_MM
+    showLabelUnits = TRUE
+    labelFontSize = 12
+    labelUseTextShadow = TRUE
+    labelMarginX = 2
+    labelMarginY = 2
+    ghostMode = GHOST_BOTH_SIDES
+    ghostUnitMode = GHOST_UNIT_SLICE
+    ghostStyleAlpha = TRUE
+    ghostStyleStipple = TRUE
+    ghostStyleLineWidth = FALSE
+    ghostStyleBrighten = FALSE
+    ghostDepth = 5
+    ghostFadeOutAlpha = 0
+    generalLabelColor = "1 1 1"
+    generalLabelAlpha = 1
+    labelColorMode = COLOR_GENERAL
+    useTessellation = FALSE
+    useHoleCorrection = FALSE
+    tessellationColorMode = COLOR_AS_CSO
+    tessellationColor = "0.899999976158142 0.5 0.899999976158142"
+    tessellationAlpha = 0.2
+    globalAlphaFactor = 1
+    overwriteSelectionVisualizationSettings = FALSE
+    selectionColoringMode = SELECTION_COLOR_MODE_FIXED
+    selectionBrightenColor = 0.2
+    selectionFixedColor = "1 1 0.600000023841858"
+    selectionLineWidthMode = SELECTION_LINE_WIDEN
+    selectionWidenLineWidth = 1
+    selectionFixedLineWidth = 1
+    tessellationWindingRule = WR_ODD
+    selectGroupsParsProToto = TRUE
+    highlightSelectedGroups = FALSE
+    setPastedCSOsSelected = FALSE
+    enableMouseOverHighlighting = TRUE
+    mouseOverColorMode = HIGHLIGHT_COLOR_MODE_FIXED
+    mouseOverColorBrightenValue = 0.80000001
+    mouseOverColorColor = "1 1 1"
+    mouseOverLineWidthMode = HIGHLIGHT_LINE_WIDEN
+    mouseOverLineWidthWidenValue = 0
+    mouseOverLineWidthLineWidth = 1
+    currentlyUnderMouseCursorCSOId = 0
+    useIconFile = FALSE
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    internalIconFile = "C:/Program Files/MeVisLab2.2.1VC9/Packages/MeVisLab/Standard/Modules/Resources/Images/markerIcons.tif"
+    cutCopyKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    copyKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    pasteKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    undoKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    redoKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    deleteSeedPointKeyModifier = EDIT_OP_KEY_MOD_NONE
+    deleteCSOKeyModifier = EDIT_OP_KEY_MOD_SHIFT
+    multiSelectionKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    enableMultiSelection = TRUE
+    cutCopyKey = EDIT_OP_KEY_X
+    copyKey = EDIT_OP_KEY_C
+    pasteKey = EDIT_OP_KEY_V
+    undoKey = EDIT_OP_KEY_Z
+    redoKey = EDIT_OP_KEY_Y
+    deleteSeedPointKey = EDIT_OP_KEY_DELETE
+    deleteCSOKey = EDIT_OP_KEY_DELETE
+    nextInteractionStatus = INTERACTIVE_MODE_START_CSO
+    shouldUpdateInteractionStateAndCSOId = TRUE
+    shouldTouchItselfInEvalEvent = TRUE
+    forceStartNewCSOKeyModifier = EDIT_OP_KEY_MOD_NONE
+    forceStartNewCSOKey = EDIT_OP_KEY_F
+    showParallelDotProductLimitRadian = 0
+  }
+}
+module CSOManager {
+  internal  {
+    frame = "201 205 112 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "461 197 692 565"
+        sizeHint = "692 565"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 101 783 891"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOManager1
+    workDirectlyOnInputCSOList = TRUE
+    selectLastCreatedGroup = TRUE
+    selectionColoringMode = SelectionColorModeFixed
+    selectionLineWidthMode = SelectionLineWidthWiden
+    selectionBrightenColor = 0.2
+    selectionFixedColor = "1 1 0.600000023841858"
+    selectionWidenLineWidth = 1
+    selectionFixedLineWidth = 2
+    csoDefaultLabel = ""
+    csoDefaultDescription = ""
+    csoDefaultShowState = TRUE
+    csoDefaultVoxelizeState = TRUE
+    csoDefaultEditableState = TRUE
+    groupSingleDeleteGroupCSOHandling = RemoveIfInNoGroup
+    groupDefaultLabel = ""
+    groupDefaultDescription = ""
+    groupDefaultUseTimePointIndex = FALSE
+    groupDefaultTimePointIndex = 0
+    groupDefaultUseShowState = FALSE
+    groupDefaultShowState = TRUE
+    groupDefaultUseVoxelizeState = FALSE
+    groupDefaultVoxelizeState = TRUE
+    groupDefaultUseEditableState = FALSE
+    groupDefaultEditableState = TRUE
+    groupDefaultUsePathPointStyle = FALSE
+    groupDefaultPathPointStyle = LineStyleSolid
+    groupDefaultUsePathPointWidth = FALSE
+    groupDefaultPathPointWidth = 1
+    groupDefaultUsePathPointColor = FALSE
+    groupDefaultPathPointColor = "1 1 1"
+    groupDefaultUsePathPointAlpha = FALSE
+    groupDefaultPathPointAlpha = 1
+    groupDefaultUseSeedPointStyle = FALSE
+    groupDefaultSeedPointStyle = MarkerModeRect
+    groupDefaultUseSeedPointSize = FALSE
+    groupDefaultSeedPointSize = 3
+    groupDefaultUseSeedPointColor = FALSE
+    groupDefaultSeedPointColor = "0 1 0"
+    groupDefaultUseSeedPointAlpha = FALSE
+    groupDefaultSeedPointAlpha = 1
+    groupDefaultUseVoxelWriteMode = FALSE
+    groupDefaultVoxelWriteMode = VoxelWriteModeModule
+    groupDefaultUseVoxelWriteValue = FALSE
+    groupDefaultVoxelWriteValue = 1024
+    groupDefaultNumMaximumCSOs = 0
+    groupDefaultOverflowHandling = RemoveFirst
+    groupDefaultRemoveFromGroupHandling = RemoveIfInNoGroup
+    listSingleRemoveEmptyGroupHandling = RemoveAlways
+    listDefaultRemoveEmptyGroupHandling = RemoveAlways
+    enableUndoRedo = TRUE
+    numUndos = 0
+    numRedos = 0
+    undoStackLimit = 16
+    useSelectionCSONotification = FALSE
+    useSelectionGroupNotification = FALSE
+    useFinishedCSONotification = FALSE
+    useFinishedGroupNotification = FALSE
+    useCSOMovedNotification = FALSE
+    useRepaintNotification = FALSE
+    useInteractionInitNotification = FALSE
+    useStartNewCSONotification = FALSE
+    enableSelectionNotification = TRUE
+    enableFinishedNotification = TRUE
+    enableCSOMovedNotification = TRUE
+    enableRepaintNotification = TRUE
+    groupDefaultUseVoxelWrite = FALSE
+    groupDefaultUseVisuals = FALSE
+    groupDefaultUseMarkerSettings = FALSE
+    csoTreeView = ""
+    groupTreeView = ""
+    numCSOs = 0
+    numGroups = 0
+    numSelectedCSOs = 0
+    numSelectedGroups = 0
+    selectedCSOsGroupIds = ""
+    csoTabSelected = FALSE
+    groupTabSelected = FALSE
+    selectionTabSelected = FALSE
+    notificationTabSelected = FALSE
+    defaultTabSelected = FALSE
+    csoCommonTabSelected = TRUE
+    csoVisualsTabSelected = FALSE
+    groupCommonTabSelected = TRUE
+    groupVisualsTabSelected = FALSE
+    groupMiscTabSelected = FALSE
+    notificationControlTabSelected = TRUE
+    notificationOutputCSOTabSelected = FALSE
+    notificationOutputGroupTabSelected = FALSE
+    defaultCSOCommonTabSelected = TRUE
+    defaultGroupCommonTabSelected = FALSE
+    defaultGroupVisualsTabSelected = FALSE
+    defaultGroupMiscTabSelected = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "253 -191 120 64"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "438 344 691 363"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "885 186 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DrawROI
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 38
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    lutCenter = 845400.12
+    lutWidth = 1783000.4
+    lutUseTraceColors = FALSE
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_SHORT
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    plane = "0 0 1 3.63093495368958"
+  }
+}
+module CSOFreehandProcessor {
+  internal  {
+    frame = "317 197 168 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "1346 178 324 412"
+        sizeHint = "283 412"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOFreehandProcessor
+    updateMode = Off
+    autoApply = FALSE
+    isProcessing = FALSE
+    emptyGroupBeforeGeneration = FALSE
+    addCSOToGroupMode = AddToGroupByLabel
+    addCSOToGroupWithLabel = ""
+    addCSOToGroupWithId = -1
+    id = 0
+    pathPointStyle = LineStyleSolid
+    pathPointWidth = 1
+    pathPointColor = "1 1 0"
+    pathPointAlpha = 1
+    seedPointStyle = MarkerModeRect
+    seedPointSize = 2
+    seedPointColor = "0 1 0"
+    seedPointAlpha = 1
+    voxelWriteMode = VoxelWriteModeModule
+    voxelWriteValue = 1024
+    creationMode = CreationModeClosedPolyline
+    interpolationMode = InterpolationModeLinearInterpolation
+    seedPlacementPolicy = PlaceSeedPointOnClick
+    finishingMode = FinishOnRelease
+    minNumSeedPoints = 4
+    minSeedPointDistance = 0
+    shouldCloseOnFinish = TRUE
+    useFinishingDistance = TRUE
+    finishingDistance = 24
+    numInterpolationSteps = 1
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "5 -79 120 64"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "53 152 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MeanMask
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Calculator {
+  internal  {
+    frame = "-163 265 88 64"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "414 171 700 656"
+        sizeHint = "700 656"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "760 185 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Output
+    statusBar = ""
+    exp1 = d1/d2
+    exp2 = d4/d3
+    exp3 = ""
+    exp4 = ""
+    exp5 = ""
+    exp6 = ""
+    exp7 = ""
+    exp8 = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    f1 = 0
+    f2 = 0
+    f3 = 0
+    f4 = 0
+    f5 = 0
+    f6 = 0
+    ld1 = 0
+    ld2 = 0
+    ld3 = 0
+    ld4 = 0
+    ld5 = 0
+    ld6 = 0
+    v1 = "0 0 0"
+    v2 = "0 0 0"
+    v3 = "0 0 0"
+    v4 = "0 0 0"
+    v5 = "0 0 0"
+    v6 = "0 0 0"
+    applyMode = AutoApply
+    exp1Comment = mean/stdev
+    exp2Comment = #vox(post-threshold)/#vox(pre-threshold)
+    exp3Comment = ""
+    exp4Comment = ""
+    exp5Comment = ""
+    exp6Comment = ""
+    exp7Comment = ""
+    exp8Comment = ""
+    scalarVariablesComment = ""
+    vectorVariablesComment = ""
+    resultVector1_x = 0
+    resultVector1_y = 0
+    resultVector1_z = 0
+    resultVector2_x = 0
+    resultVector2_y = 0
+    resultVector2_z = 0
+    resultVector3_x = 0
+    resultVector3_y = 0
+    resultVector3_z = 0
+    resultVector4_x = 0
+    resultVector4_y = 0
+    resultVector4_z = 0
+    resultVector5_x = 0
+    resultVector5_y = 0
+    resultVector5_z = 0
+    resultVector6_x = 0
+    resultVector6_y = 0
+    resultVector6_z = 0
+    resultVector7_x = 0
+    resultVector7_y = 0
+    resultVector7_z = 0
+    resultVector8_x = 0
+    resultVector8_y = 0
+    resultVector8_z = 0
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "445 517 136 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _automatic {
+        geometry = "716 221 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "274 491 372 350"
+        sizeHint = "372 350"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    threshCenter = 16383.5
+    threshWidth = 32767
+    threshMin = 0
+    threshMax = 32767
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 1
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Mask {
+  internal  {
+    frame = "457 -11 80 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "843 522 371 94"
+        sizeHint = "248 94"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "45 541 136 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "368 328 436 356"
+        sizeHint = "436 356"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    alphaFactor = 0.71200001
+    baseColor = "1 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "45 105 120 64"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "1025 164 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 179 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ROIstats
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "-175 181 128 56"
+    moduleGroupName = LungSNR
+    windows  {
+      window _default {
+        geometry = "-342 214 1542 734"
+        sizeHint = "904 734"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "91 268 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = "C:/Users/u0091609/Desktop/Alzheimer projects/FVL_biAT/FVL_biAT_1y/Late2013/TurboRARE3D/FVL_33776_1L_1R_a_me1_6_1.hdr"
+    in1 = 0
+    in2 = 0
+    in3 = 1072
+    in4 = 954
+    in5 = 221.430605196778
+    in6 = 8974.68972746331
+    in7 = 0
+    in8 = "C:\\Users\\Kristof\\Desktop"
+    in9 = fqkdljf
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = FALSE
+    autoApply1 = FALSE
+    autoApply2 = FALSE
+    autoApply3 = FALSE
+    autoApply4 = FALSE
+    autoApply5 = FALSE
+    autoApply6 = FALSE
+    autoApply7 = FALSE
+    autoApply8 = FALSE
+    autoApply9 = FALSE
+    out0 = 22774.7769037583
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*import os
+
+os.chdir(ctx.field("in8").value) 
+
+
+#various variables below
+filename = ctx.field("in9").value + '.txt'
+image = ctx.field("in0").value
+imname = os.path.basename(image)
+snr = ctx.field("in1").value
+ratio = ctx.field("in2").value
+roiv = ctx.field("in3").value
+roit = ctx.field("in4").value
+stn = ctx.field("in5").value 
+mnoise = ctx.field("out0").value
+si = ctx.field("in6").value
+sibef = ctx.field("in7").value
+
+
+if os.path.isfile(filename): #checks if file already exists. Appends if it does, creates if it does not
+    f = open(filename, 'a')
+    f.write(imname + '\\t' + snr + '\\t' + roit + '\\t' + roiv + '\\t' + ratio + '\\t' + stn + '\\t' + si + '\\n')
+    f.close()
+else:
+    f = open(filename, 'w')
+    f.write('filename\\tSNR\\tthreshvoxels\\ttotalvoxels\\tvoxratio\\tmeannoise\\tstdnoise\\tmeanSIbeforethresh\\tmeanSI\\n')
+    f.write(imname + '\\t' + snr + '\\t' + roit + '\\t' + roiv + '\\t' + ratio + '\\t' + mnoise + '\\t' + stn + '\\t' + sibef + '\\t' + si + '\\n')
+    f.close()*"
+  }
+}
+connections  {
+  ImagePropertyConvert.input0 = ImageLoad.output0
+  Arithmetic1.input0 = ImagePropertyConvert.output0
+  Arithmetic1.constant = RunPythonScript1.out0
+  RunPythonScript1.in0 = ImageLoad.filename
+  CSOSave.inCSOList = CSOManager1.outCSOList
+  ImageStatistics.input0 = Arithmetic1.output0
+  ImageStatistics.input1 = CSOConvertToImage.output0
+  ROISelect.inImage = Arithmetic1.output0
+  StdDevNoise.input0 = ROISelect.outImage
+  CSOConvertToImage.input0 = Arithmetic1.output0
+  CSOConvertToImage.inCSOList = CSOManager1.outCSOList
+  SoView2DCSOEditor.inCSOList = CSOManager1.outCSOList
+  SoView2DCSOEditor.inProcessor = CSOFreehandProcessor.outProcessorData
+  CSOManager1.inCSOList = CSOLoad.outCSOList
+  DrawROI.inImage = Arithmetic1.output0
+  DrawROI.inInvPreLUT = SoView2DOverlay.self
+  DrawROI.inInvPostLUT = SoView2DCSOEditor.self
+  MeanMask.input0 = Arithmetic1.output0
+  MeanMask.input1 = Mask.output0
+  IntervalThreshold1.input0 = ImageLoad.output0
+  IntervalThreshold1.threshMin = Calculator.resultScalar1
+  Mask.input0 = IntervalThreshold1.output0
+  Mask.input1 = CSOConvertToImage.output0
+  SoView2DOverlay.image = Mask.output0
+  ROIstats.input0 = Arithmetic1.output0
+  ROIstats.input1 = CSOConvertToImage.output0
+  RunPythonScript.in0 = ImageLoad.filename
+  RunPythonScript.in1 = Output.resultScalar1
+  RunPythonScript.in2 = Output.resultScalar2
+  RunPythonScript.in7 = ImageStatistics.totalMean
+  RunPythonScript.out0 = StdDevNoise.totalMean
+}
+networkModel = ""

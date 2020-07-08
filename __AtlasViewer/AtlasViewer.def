@@ -1,0 +1,19 @@
+//----------------------------------------------------------------------------------
+//! AtlasViewer module definition
+/*!
+// \file    AtlasViewer.def
+// \author  Kristof Govaerts
+// \date    2014-03-29
+*/
+//----------------------------------------------------------------------------------
+
+
+MacroModule AtlasViewer {
+  genre              = "VisualizationMain"
+  author             = "Kristof Govaerts"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+   
+  externalDefinition = "$(LOCAL)/AtlasViewer.script"
+}

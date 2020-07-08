@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! LungSNR module definition
+/*!
+// \file    LungSNR.def
+// \author  Kristof Govaerts
+// \date    2013-06-20
+*/
+//----------------------------------------------------------------------------------
+
+MacroModule LungSNR {
+  genre = "SegmentationMain"
+  author = "Kristof Govaerts"
+  comment = ""
+  keywords = ""
+  seeAlso = ""
+  exampleNetwork = "$(LOCAL)/networks/LungSNRExample.mlab"
+   
+  externalDefinition = "$(LOCAL)/LungSNR.script"
+
+}

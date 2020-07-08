@@ -1,0 +1,77 @@
+Interface  {
+  Inputs {
+    Field input0 {
+      internalName = Morphology.input0
+    }
+    Field input0 {
+      internalName = WorldVoxelConvert.input0
+    }
+    Field input0 {
+      internalName = Info.input0
+    }
+    Field input0 {
+      internalName = IntervalThreshold.input0
+    }
+  }
+  Outputs {}
+  Parameters {
+    Field SoView2DMarkerEditor1_deleteAll {
+      internalName = SoView2DMarkerEditor1.deleteAll
+    }
+    Field MeanThickness {internalName = RunPythonScript.in7 editable=False}
+    Field VesselThickness { internalName = RunPythonScript.in9 editable = False }
+    Field VesselLength { internalName = RunPythonScript1.out2 editable = False }
+    Field VesselTortuosity { internalName = RunPythonScript1.out0 editable = False }
+    Field numItems { internalName = SoView2DMarkerEditor1.numItems editable = False}
+}
+} 
+
+Window "Viewer" {
+    Category "Visualization" {
+      style = Panel.default
+      w     = 800 mw = 800 pw = 800
+      h     = 800 mh = 800 ph = 800
+      //wakeupCommand = startApplication
+      shouldCloseCommand = stopApplication 
+      expandY            = Yes
+      expandX            = Yes
+      //wakeupCommand = startApplication  
+      Vertical {
+        Horizontal {
+          Panel{
+            module = AxialView  
+          }
+          Panel {
+            module = CoronalView 
+          }
+        }
+        Horizontal {
+        Viewer View3D2.self {
+          preferredHeight = 500
+          preferredWidth = 500
+           }
+          Vertical {
+          Button XMarkerShortestPath.updateButton {
+            title = "Update path"
+          }
+            Field Morphology.kernelZ {title="Kernel size: "}
+            Field DtfSkeletonization.cavityVolume {title="Cavity volume(vox): "}
+            Field numItems {title="# Markers: "}
+            Field MeanThickness {title="Mean Thickness: "}
+            Field VesselThickness {title="Vessel Thickness (mm): "}
+            Field VesselLength {title="Vessel Length (mm): "}
+            Field VesselTortuosity {title="Tortuosity: "}
+            Button SoView2DMarkerEditor1_deleteAll {title="Delete all points"}
+            Field RunPythonScript2.in9 {title = "Filename: "}
+            Field ImageSave.postfix {title="File extension: "}
+            Button ImageSave.save {
+              title = "Save path"
+            }
+            Field ImageSave.status {}
+          }
+        }
+        }
+       
+        }
+      }
+

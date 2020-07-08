@@ -1,0 +1,168 @@
+//----------------------------------------------------------------------------------
+//! Macro module LungSNR
+/*!
+// \file    LungSNR.script
+// \author  Kristof Govaerts
+// \date    2013-06-20
+//
+// 
+*/
+//----------------------------------------------------------------------------------
+
+
+Interface {
+  Inputs {
+
+  }
+  Outputs {}
+  Parameters {    
+    Field sourcePath { internalName = ImageLoad.filename }
+    Field imageMin     { internalName = IntervalThreshold1.imageMin }
+    Field imageMax     { internalName = IntervalThreshold1.imageMax }
+    Field threshMin { internalName = IntervalThreshold1.threshMin }
+    Field threshMax { internalName = IntervalThreshold1.threshMax }
+    Field lowerType { internalName = IntervalThreshold1.lowerType }
+    Field innerType { internalName = IntervalThreshold1.innerType }
+    Field upperType { internalName = IntervalThreshold1.upperType }
+    Field lowerUserValue { internalName = IntervalThreshold1.lowerUserValue }
+    Field innerUserValue { internalName = IntervalThreshold1.innerUserValue }
+    Field upperUserValue { internalName = IntervalThreshold1.upperUserValue }
+    Field stepSize { type = Float min = 1 max = imageMax }
+    Field modelRico { type = Float min = -1000 max = 1000 }
+    Field modelSlope { type = Float min = -1000 max = 1000 }
+    Field modelOffset { type = Float min = imageMin max = imageMax }
+    Field autoThresh { type = Bool }
+    Field removeROIs { internalName = CSOManager1.removeAllCSOsAndGroups }
+    Field removeCurr { internalName = CSOManager1.csoRemoveSelected }
+    Field updateThresh { type = Trigger }
+    
+    
+    
+  }
+}
+
+
+Commands {
+  Source = $(LOCAL)/LungSNR.py
+  FieldListener modelSlope {
+    listenField = updateThresh
+    command = updateThreshold
+  }
+}
+
+Window "LungSNR" {
+
+  style = Panel.default
+  w     = 800 mw = 800 pw = 800
+  h     = 800 mh = 800 ph = 800
+  //wakeupCommand = startApplication
+  //shouldCloseCommand = stopApplication 
+  expandY            = Yes
+  expandX            = Yes
+  //wakeupCommand = startApplication  
+  
+  Category "ROI & Threshold" {
+    Vertical {
+      Box "Draw ROI" {
+        expandY = yes
+        expandX = yes
+        Vertical {
+
+        Panel {
+          module = DrawROI}
+          
+          Horizontal {
+            Button removeCurr {title = "Delete current ROI"}
+            Button removeROIs {title = "Delete all ROIs"}}
+        }
+        }
+
+      Horizontal {
+        Box "Threshold" {
+          Vertical{    
+            
+            CheckBox autoThresh {
+              title = "Define threshold automatically?"
+            }
+            Box "Manual threshold" {
+            IntervalSlider { expandY = yes
+              lowerField = IntervalThreshold1.threshMin
+              upperField = IntervalThreshold1.threshMax
+              dependsOn = !autoThresh
+            }
+            Horizontal {
+
+              Field threshMin {
+                expandX = yes
+                title   = Min:
+                step    = 1
+                stepstep = 100 
+                dependsOn = !autoThresh
+              }
+              Field threshMax {
+                expandX = yes
+                title   = Max:
+                step    = 1
+                stepstep = 100   
+                dependsOn = !autoThresh
+              }
+            }
+            }
+            
+            Box "Automatic threshold" {
+              Vertical {
+              Horizontal {
+                Button updateThresh { title = "Update"}
+
+                Field modelRico {edit = yes title = "Noise *" dependsOn = autoThresh}
+                Field modelSlope {edit = yes title = "+ stdNoise *" dependsOn = autoThresh}
+                Field modelOffset {edit = yes title = + dependsOn = autoThresh}
+                
+              }
+                Horizontal {
+                Field StdDevNoise.totalMean {edit = no title = Noise:}
+                  Field StdDevNoise.totalStdDev {edit = no title = StdNoise:}
+                }
+              }
+            }
+          }
+        }
+          
+        Box "Output Fill Values" {
+          Table { alignX = left
+            Row  {
+              Field lowerType      { title = "Below Value:" }
+              Field lowerUserValue { title = "User Def.:" dependsOn = "* lowerType == "UserDef" *" }
+            }
+            Row  {
+              Field innerType      { title = "Inner Value:" }
+              Field innerUserValue { title = "User Def.:" dependsOn = "* innerType == "UserDef" *" }
+            }
+            Row  {
+              Field upperType      { title = "Above Value:" }
+              Field upperUserValue { title = "User Def.:" dependsOn = "* upperType == "UserDef" *" }
+            }
+          }
+        }
+      }
+    }
+      
+  }
+  
+  Category "Noise ROI" {
+  Vertical {
+    Box "File selection" {
+      Field sourcePath { 
+        browseButton = Yes 
+        browseMode   = open
+        title        = "File: "
+        expandX      = yes
+      }
+    }
+        Panel {
+            module = ROISelect           
+          }
+  }
+  }
+  
+      }

@@ -1,0 +1,2880 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module RunPythonScript {
+  internal  {
+    frame = "297 -579 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "208 265 1186 784"
+        sizeHint = "682 784"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript3
+    in0 = "0.0 12.0 16.0 18.0 19.0 20.0 27.0 28.0 29.0 30.0 32.0 34.0 64.0 65.0 85.0 86.0 90.0 91.0 92.0 93.0 94.0 95.0 96.0 97.0 98.0 99.0 101.0 103.0 104.0 107.0 108.0 110.0 111.0 112.0 1001.0 1002.0 1003.0 1004.0 1005.0 1006.0 1007.0 1008.0 1010.0 1011.0"
+    in1 = 12
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = FALSE
+    autoApply1 = FALSE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = 16
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*l=ctx.field("in0").value
+c=int(ctx.field("in1").value)
+
+li=[int(i) for i in l.replace(".0","").split()]
+li.pop(li.index(0))
+cu=li.index(c)
+
+next=li[(cu+1)%len(li)]
+
+
+ctx.field("out0").value=next*"
+    showFields = TRUE
+    showInitCode = TRUE
+    showWakeUpCode = TRUE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "41 -563 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "103 504 1186 784"
+        sizeHint = "682 784"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript2
+    in0 = "0.0 12.0 16.0 18.0 19.0 20.0 27.0 28.0 29.0 30.0 32.0 34.0 64.0 65.0 85.0 86.0 90.0 91.0 92.0 93.0 94.0 95.0 96.0 97.0 98.0 99.0 101.0 103.0 104.0 107.0 108.0 110.0 111.0 112.0 1001.0 1002.0 1003.0 1004.0 1005.0 1006.0 1007.0 1008.0 1010.0 1011.0"
+    in1 = 16
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = FALSE
+    autoApply1 = FALSE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = 1011
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*l=ctx.field("in0").value
+c=int(ctx.field("in1").value)
+
+li=[int(i) for i in l.replace(".0","").split()]
+li.pop(li.index(0))
+cu=li.index(c)
+
+
+prev=li[cu-1]
+
+
+ctx.field("out0").value=prev*"
+    showFields = TRUE
+    showInitCode = TRUE
+    showWakeUpCode = TRUE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module OrthoReformat3 {
+  internal  {
+    frame = "-799 365 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "671 501 272 256"
+        sizeHint = "272 256"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoReformat32
+    useGlobalInputImage = TRUE
+  }
+}
+module OrthoSwapFlip {
+  internal  {
+    frame = "189 413 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "90 590 249 246"
+        sizeHint = "249 246"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoSwapFlip5
+    useGlobalInputImage = FALSE
+    mode = UseSwapFlip
+    useViewDir = FALSE
+    view = Other
+    useOrientation = TRUE
+    orientation = XYZ
+    flipHorizontal = FALSE
+    flipVertical = TRUE
+    flipDepth = FALSE
+    autoPageSizeX = TRUE
+    pageX = 115
+    autoPageSizeY = TRUE
+    pageY = 39
+    autoPageSizeZ = TRUE
+    pageZ = 1
+  }
+}
+module OrthoSwapFlip {
+  internal  {
+    frame = "-3 621 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "90 590 249 246"
+        sizeHint = "249 246"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoSwapFlip1
+    useGlobalInputImage = FALSE
+    mode = UseSwapFlip
+    useViewDir = FALSE
+    view = Other
+    useOrientation = TRUE
+    orientation = XYZ
+    flipHorizontal = FALSE
+    flipVertical = TRUE
+    flipDepth = FALSE
+    autoPageSizeX = TRUE
+    pageX = 1
+    autoPageSizeY = TRUE
+    pageY = 1
+    autoPageSizeZ = TRUE
+    pageZ = 1
+  }
+}
+module OrthoSwapFlip {
+  internal  {
+    frame = "385 613 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _automatic {
+        geometry = "557 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "683 506 249 246"
+        sizeHint = "249 246"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoSwapFlip
+    useGlobalInputImage = FALSE
+    mode = UseSwapFlip
+    useViewDir = FALSE
+    view = Other
+    useOrientation = TRUE
+    orientation = XYZ
+    flipHorizontal = FALSE
+    flipVertical = TRUE
+    flipDepth = FALSE
+    autoPageSizeX = TRUE
+    pageX = 1
+    autoPageSizeY = TRUE
+    pageY = 1
+    autoPageSizeZ = TRUE
+    pageZ = 1
+  }
+}
+module Downsample3D {
+  internal  {
+    frame = "41 413 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "393 320 313 323"
+        sizeHint = "313 323"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 180 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Downsample3D2
+    restriction = MaxVoxelsPerDim
+    limit = 128
+    interpolate = FALSE
+    method = Triangle/Linear
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1181 -939 104 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _automatic {
+        geometry = "557 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "611 446 393 366"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave1
+    taskVerboseLogging = FALSE
+    filename = _updated.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = TRUE
+    sourceName = ""
+    postfix = _updated
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module CSOBulgeProcessor {
+  internal  {
+    frame = "1413 317 152 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "653 551 250 178"
+        sizeHint = "250 178"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOBulgeProcessor1
+    updateMode = Off
+    autoApply = FALSE
+    emptyGroupBeforeGeneration = FALSE
+    addCSOToGroupMode = AddToGroupByLabel
+    addCSOToGroupWithLabel = ""
+    addCSOToGroupWithId = -1
+    id = 0
+    pathPointStyle = LineStyleSolid
+    pathPointWidth = 1
+    pathPointColor = "1 1 0"
+    pathPointAlpha = 1
+    seedPointStyle = MarkerModeRect
+    seedPointSize = 2
+    seedPointColor = "0 1 0"
+    seedPointAlpha = 1
+    voxelWriteMode = VoxelWriteModeModule
+    voxelWriteValue = 1024
+    influenceRange = 64
+    restrictToCurvature = TRUE
+    angleLimit = 90
+    adaptInfluenceWhileInteracting = FALSE
+    adaptInfluenceByDistance = FALSE
+  }
+}
+module CSOBulgeProcessor {
+  internal  {
+    frame = "1417 277 144 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "183 575 250 178"
+        sizeHint = "250 178"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOBulgeProcessor
+    updateMode = Off
+    autoApply = FALSE
+    emptyGroupBeforeGeneration = FALSE
+    addCSOToGroupMode = AddToGroupByLabel
+    addCSOToGroupWithLabel = ""
+    addCSOToGroupWithId = -1
+    id = 0
+    pathPointStyle = LineStyleSolid
+    pathPointWidth = 1
+    pathPointColor = "1 1 0"
+    pathPointAlpha = 1
+    seedPointStyle = MarkerModeRect
+    seedPointSize = 2
+    seedPointColor = "0 1 0"
+    seedPointAlpha = 1
+    voxelWriteMode = VoxelWriteModeModule
+    voxelWriteValue = 1024
+    influenceRange = 500
+    restrictToCurvature = TRUE
+    angleLimit = 20
+    adaptInfluenceWhileInteracting = FALSE
+    adaptInfluenceByDistance = TRUE
+  }
+}
+module Histogram {
+  internal  {
+    frame = "1545 -587 96 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "718 428 399 354"
+        sizeHint = "399 354"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "19 327 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram1
+    useMask = TRUE
+    xRange = "Image Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = Off
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = FALSE
+    backgroundValue = 0
+    binSize = 1
+  }
+}
+module PrintCurves {
+  internal  {
+    frame = "1413 -683 104 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "618 272 379 416"
+        sizeHint = "379 416"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "763 217 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PrintCurves1
+    curveTable = "# Unknown
+
+"
+    autoUpdate = AutoUpdate
+    indentString = "# "
+    filename = ""
+    useSeparator = FALSE
+    columnSeparator = ""
+    rowSeparator = ""
+    trimCurve = FALSE
+    minX = 0
+    maxX = 100
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1369 -947 96 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "1017 397 393 366"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "89 316 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave
+    taskVerboseLogging = FALSE
+    filename = _updated.dcm.hdr
+    format = Analyze
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = _updated
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1409 -403 80 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "683 582 371 94"
+        sizeHint = "248 94"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask1
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1389 -555 88 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "920 345 500 548"
+        sizeHint = "500 548"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic
+    expression = "a+(i1*b)"
+    i1 = 16
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Mask {
+  internal  {
+    frame = "1265 -307 80 56"
+    moduleGroupName = Recalculate
+    windows  {
+      window _default {
+        geometry = "683 582 371 94"
+        sizeHint = "248 94"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module CSOConvertToImage {
+  internal  {
+    frame = "1453 61 152 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "705 583 440 464"
+        sizeHint = "440 464"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "741 280 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOConvertToImage
+    updateMode = Off
+    autoApply = FALSE
+    isProcessing = FALSE
+    foregroundValue = 1
+    backgroundValue = 0
+    useImageValues = FALSE
+    fillSurface = TRUE
+    copyInputImage = FALSE
+    listenInteractionNotifications = FALSE
+    listenInteractionFinished = TRUE
+    boundingBoxMargin = 0
+    voxelizeCSO = FALSE
+    removeOutsideVoxels = FALSE
+    useAntiAliasing = FALSE
+    useGlobalSubsample = TRUE
+    antiAliasSubSample = 4
+    antiAliasSubSampleX = 4
+    antiAliasSubSampleY = 4
+    antiAliasSubSampleZ = 4
+    removeBorderVoxelsByVolume = FALSE
+    removeBorderVoxelVolumeThreshold = 0.6
+    ignoreTimePoints = FALSE
+    drawToAllTimePoints = FALSE
+    createMarkerList = FALSE
+    markerGenerationMode = CSOMarkerGenerationModeFromVoxels
+    createCSOVoxelSet = FALSE
+    voxelSetMode = VoxelSetModeReplaceMax
+    generationMode = GenerationModeComplete
+    numThreads = 1
+    removeOutsideVoxelsMode = Disabled
+  }
+}
+module SoView2DCSOEditor {
+  internal  {
+    frame = "1229 141 152 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "99 255 620 622"
+        sizeHint = "620 622"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DCSOEditor
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 24
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    shouldListenToRepaintEvents = FALSE
+    shouldListenToSelectionChangedEvents = TRUE
+    shouldListenToFinishedEvents = TRUE
+    generalInteractionMode = INTERACTION_MODE_EDIT
+    generalInteractionModeToggleKey = TOGGLE_MODE_ALT
+    movingOn = TRUE
+    shouldLimitCSOMovement = FALSE
+    moveRatio = 0.5
+    useAntiAliasing = TRUE
+    useInterpolationTargetColor = TRUE
+    interpolationTargetColor = "1 0 0"
+    showCSOsOnAllTimePoints = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    showBoundingBox = FALSE
+    boundingBoxAlpha = 0.5
+    boundingBoxColor = "1 1 1"
+    showOnlyParallelCSOs = FALSE
+    showParallelThickness = 0.1
+    shouldLevelCSO = FALSE
+    useStylePalette = FALSE
+    stylePaletteUseIndexAs = USE_INDEX_FOR_CSO
+    labelShowMode = LABEL_SHOW_NONE
+    combineLabelsForGroupsOnSlice = FALSE
+    labelAlignmentMode = LABEL_ALIGN_CENTER
+    labelUnitScale = LABEL_UNIT_SCALE_MM
+    showLabelUnits = TRUE
+    labelFontSize = 12
+    labelUseTextShadow = TRUE
+    labelMarginX = 2
+    labelMarginY = 2
+    ghostMode = GHOST_NONE
+    ghostUnitMode = GHOST_UNIT_SLICE
+    ghostStyleAlpha = TRUE
+    ghostStyleStipple = TRUE
+    ghostStyleLineWidth = FALSE
+    ghostStyleBrighten = FALSE
+    ghostDepth = 5
+    ghostFadeOutAlpha = 0
+    generalLabelColor = "1 1 1"
+    generalLabelAlpha = 1
+    labelColorMode = COLOR_GENERAL
+    useTessellation = FALSE
+    useHoleCorrection = FALSE
+    useHoleCorrectionForGroupsOnly = FALSE
+    tessellationColorMode = COLOR_AS_CSO
+    tessellationColor = "0.899999976158142 0.5 0.899999976158142"
+    tessellationAlpha = 0.2
+    useFillingFromSide = FALSE
+    fillingFromSideLineWidthMode = SIDE_FILLING_WIDTH_AUTOMATIC
+    fillingFromSideManualLineWidthX = 1
+    fillingFromSideManualLineWidthY = 1
+    usePathPointColorForSeedPoints = FALSE
+    showSeedPoints = TRUE
+    globalAlphaFactor = 1
+    overwriteSelectionVisualizationSettings = FALSE
+    selectionColoringMode = SELECTION_COLOR_MODE_FIXED
+    selectionBrightenColor = 0.2
+    selectionFixedColor = "1 1 0.600000023841858"
+    selectionLineWidthMode = SELECTION_LINE_WIDEN
+    selectionWidenLineWidth = 1
+    selectionFixedLineWidth = 1
+    selectedSeedPointColoringMode = SELECTED_SEED_POINT_COLOR_MODE_FIXED
+    selectedSeedPointBrightenColor = 0.2
+    selectedSeedPointFixedColor = "1 1 0.600000023841858"
+    selectedSeedPointAlpha = 1
+    selectedSeedPointSizeMode = SELECTED_SEED_POINT_ENLARGE
+    selectedSeedPointEnlargeSize = 1
+    selectedSeedPointSize = 1
+    tessellationWindingRule = WR_ODD
+    selectGroupsParsProToto = TRUE
+    highlightSelectedGroups = FALSE
+    setPastedCSOsSelected = FALSE
+    combinePastedCSOsToGroupsOfOriginalCSOs = FALSE
+    enableMouseOverHighlighting = TRUE
+    mouseOverColorMode = HIGHLIGHT_COLOR_MODE_FIXED
+    mouseOverColorBrightenValue = 0.80000001
+    mouseOverColorColor = "1 1 1"
+    mouseOverLineWidthMode = HIGHLIGHT_LINE_WIDEN
+    mouseOverLineWidthWidenValue = 0
+    mouseOverLineWidthLineWidth = 1
+    currentlyUnderMouseCursorCSOId = 0
+    useIconFile = FALSE
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    internalIconFile = "C:/Program Files/MeVisLab2.4VC10-64/Packages/MeVisLab/Standard/Modules/Resources/Images/markerIcons.tif"
+    cutCopyKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    copyKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    pasteKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    undoKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    redoKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    deleteSeedPointKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    deleteCSOKeyModifier = EDIT_OP_KEY_MOD_NONE
+    multiSelectionKeyModifier = EDIT_OP_KEY_MOD_CONTROL
+    enableMultiSelection = TRUE
+    cutCopyKey = EDIT_OP_KEY_X
+    copyKey = EDIT_OP_KEY_C
+    pasteKey = EDIT_OP_KEY_V
+    undoKey = EDIT_OP_KEY_Z
+    redoKey = EDIT_OP_KEY_Y
+    deleteSeedPointKey = EDIT_OP_KEY_DELETE
+    deleteCSOKey = EDIT_OP_KEY_DELETE
+    nextInteractionStatus = INTERACTIVE_MODE_START_CSO
+    shouldUpdateInteractionStateAndCSOId = TRUE
+    shouldTouchItselfInEvalEvent = TRUE
+    forceStartNewCSOKeyModifier = EDIT_OP_KEY_MOD_NONE
+    forceStartNewCSOKey = EDIT_OP_KEY_F
+    shouldOnlyInteractWithSelectedCSO = FALSE
+    showParallelDotProductLimitRadian = 0
+  }
+}
+module View2D {
+  internal  {
+    frame = "1165 -43 120 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "1053 419 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 2.2915847
+    sliceZoomSynced = 2.2915847
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "32.4081954956055 32.4081954956055"
+    plane = "0 0 1 5.95550012588501"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_SHORT
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module CSOFreehandProcessor {
+  internal  {
+    frame = "1269 269 168 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "666 423 324 412"
+        sizeHint = "283 412"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOFreehandProcessor
+    updateMode = Off
+    autoApply = FALSE
+    emptyGroupBeforeGeneration = FALSE
+    addCSOToGroupMode = AddToGroupByLabel
+    addCSOToGroupWithLabel = ""
+    addCSOToGroupWithId = -1
+    id = 0
+    pathPointStyle = LineStyleSolid
+    pathPointWidth = 1
+    pathPointColor = "1 1 0"
+    pathPointAlpha = 1
+    seedPointStyle = MarkerModeNone
+    seedPointSize = 2
+    seedPointColor = "0 1 0"
+    seedPointAlpha = 1
+    voxelWriteMode = VoxelWriteModeModule
+    voxelWriteValue = 1024
+    creationMode = CreationModeClosedFreehand
+    interpolationMode = InterpolationModeSplineApproximation
+    seedPlacementPolicy = PlaceSeedPointWhileDragging
+    finishingMode = FinishOnRelease
+    minNumSeedPoints = 0
+    minSeedPointDistance = 8
+    shouldCloseOnFinish = TRUE
+    useFinishingDistance = TRUE
+    finishingDistance = 24
+    numInterpolationSteps = 1
+    showInteractivePreview = FALSE
+  }
+}
+module CSOManager {
+  internal  {
+    frame = "985 341 112 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "461 350 692 559"
+        sizeHint = "692 559"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOManager
+    workDirectlyOnInputCSOList = FALSE
+    updateCsoDisplayTree = TRUE
+    updateGroupDisplayTree = TRUE
+    selectLastCreatedGroup = TRUE
+    selectionColoringMode = SelectionColorModeFixed
+    selectionLineWidthMode = SelectionLineWidthWiden
+    selectionBrightenColor = 0.2
+    selectionFixedColor = "1 1 0.600000023841858"
+    selectionWidenLineWidth = 1
+    selectionFixedLineWidth = 2
+    selectedSeedPointColoringMode = SelectedSeedPointColorModeFixed
+    selectedSeedPointSizeMode = SelectedSeedPointSizeModeEnlarge
+    selectedSeedPointBrightenColor = 0.5
+    selectedSeedPointFixedColor = "0 1 0"
+    selectedSeedPointEnlargeSize = 1
+    selectedSeedPointSize = 1
+    csoDefaultLabel = ""
+    csoDefaultLabelAddUniqueId = FALSE
+    csoDefaultLabelUniqueIdFormat = " (%i)"
+    csoDefaultLabelAddUniqueIdAlways = FALSE
+    csoDefaultDescription = ""
+    csoDefaultShowState = TRUE
+    csoDefaultVoxelizeState = TRUE
+    csoDefaultEditableState = TRUE
+    groupSingleDeleteGroupCSOHandling = RemoveIfInNoGroup
+    groupDefaultLabel = ""
+    groupDefaultLabelAddUniqueId = FALSE
+    groupDefaultLabelUniqueIdFormat = " (%i)"
+    groupDefaultLabelAddUniqueIdAlways = FALSE
+    groupDefaultDescription = ""
+    groupDefaultUseTimePointIndex = FALSE
+    groupDefaultTimePointIndex = 0
+    groupDefaultUseShowState = FALSE
+    groupDefaultShowState = TRUE
+    groupDefaultUseVoxelizeState = FALSE
+    groupDefaultVoxelizeState = TRUE
+    groupDefaultUseEditableState = FALSE
+    groupDefaultEditableState = TRUE
+    groupDefaultUsePathPointStyle = FALSE
+    groupDefaultPathPointStyle = LineStyleSolid
+    groupDefaultUsePathPointWidth = FALSE
+    groupDefaultPathPointWidth = 1
+    groupDefaultUsePathPointColor = FALSE
+    groupDefaultPathPointColor = "1 1 1"
+    groupDefaultUsePathPointAlpha = FALSE
+    groupDefaultPathPointAlpha = 1
+    groupDefaultUseSeedPointStyle = FALSE
+    groupDefaultSeedPointStyle = MarkerModeRect
+    groupDefaultUseSeedPointSize = FALSE
+    groupDefaultSeedPointSize = 3
+    groupDefaultUseSeedPointColor = FALSE
+    groupDefaultSeedPointColor = "0 1 0"
+    groupDefaultUseSeedPointAlpha = FALSE
+    groupDefaultSeedPointAlpha = 1
+    groupDefaultUseVoxelWriteMode = FALSE
+    groupDefaultVoxelWriteMode = VoxelWriteModeModule
+    groupDefaultUseVoxelWriteValue = FALSE
+    groupDefaultVoxelWriteValue = 1024
+    groupDefaultNumMaximumCSOs = 0
+    groupDefaultOverflowHandling = RemoveFirst
+    groupDefaultRemoveFromGroupHandling = RemoveIfInNoGroup
+    listSingleRemoveEmptyGroupHandling = RemoveAlways
+    listDefaultRemoveEmptyGroupHandling = RemoveAlways
+    enableUndoRedo = TRUE
+    numUndos = 0
+    numRedos = 0
+    undoStackLimit = 16
+    useSelectionCSONotification = FALSE
+    useSelectionGroupNotification = FALSE
+    useFinishedCSONotification = FALSE
+    useFinishedGroupNotification = FALSE
+    useCSOMovedNotification = FALSE
+    useRepaintNotification = FALSE
+    useInteractionInitNotification = FALSE
+    useStartNewCSONotification = FALSE
+    enableSelectionNotification = TRUE
+    enableFinishedNotification = TRUE
+    enableCSOMovedNotification = TRUE
+    enableRepaintNotification = TRUE
+    outputApplicationEventsDebug = FALSE
+    groupDefaultUseVoxelWrite = FALSE
+    groupDefaultUseVisuals = FALSE
+    groupDefaultUseMarkerSettings = FALSE
+    csoTreeView = ""
+    groupTreeView = ""
+    numCSOs = 146
+    numGroups = 0
+    numSelectedCSOs = 0
+    numSelectedGroups = 0
+    selectedCSOsGroupIds = ""
+    csoTabSelected = FALSE
+    groupTabSelected = FALSE
+    selectionTabSelected = FALSE
+    notificationTabSelected = FALSE
+    defaultTabSelected = FALSE
+    csoCommonTabSelected = TRUE
+    csoVisualsTabSelected = FALSE
+    groupCommonTabSelected = FALSE
+    groupVisualsTabSelected = FALSE
+    groupMiscTabSelected = FALSE
+    notificationControlTabSelected = FALSE
+    notificationOutputCSOTabSelected = FALSE
+    notificationOutputGroupTabSelected = FALSE
+    defaultCSOCommonTabSelected = FALSE
+    defaultGroupCommonTabSelected = FALSE
+    defaultGroupVisualsTabSelected = FALSE
+    defaultGroupMiscTabSelected = FALSE
+  }
+}
+module CSOIsoGenerator {
+  internal  {
+    frame = "1129 45 128 56"
+    moduleGroupName = "CSO editor"
+    windows  {
+      window _default {
+        geometry = "537 524 361 486"
+        sizeHint = "361 486"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOIsoGenerator
+    updateMode = Off
+    autoApply = FALSE
+    isProcessing = FALSE
+    emptyGroupBeforeGeneration = FALSE
+    addCSOToGroupMode = AddToGroupByLabel
+    addCSOToGroupWithLabel = ""
+    addCSOToGroupWithId = -1
+    id = 0
+    pathPointStyle = LineStyleSolid
+    pathPointWidth = 1
+    pathPointColor = "1 1 0"
+    pathPointAlpha = 1
+    seedPointStyle = MarkerModeNone
+    seedPointSize = 2
+    seedPointColor = "0 1 0"
+    seedPointAlpha = 1
+    voxelWriteMode = VoxelWriteModeModule
+    voxelWriteValue = 1024
+    isoValue = 1
+    interpolate = TRUE
+    timePoint = 0
+    generateForAllTimepoints = FALSE
+    smoothingMode = SmoothingModeSplineApproximation
+    useMinimumNumberSeeds = FALSE
+    minimumNumberSeedPoints = 50
+    keepingMode = KeepingModeAll
+    autoDescription = None
+    ensureClockwiseOrientation = FALSE
+    useSmooth = FALSE
+    numSmoothPasses = 10
+    smoothFactor = 0.1
+    smoothRange = 1
+    autoClear = FALSE
+    progress = 1
+    creationMode = All
+    startCondition = Always
+    startPosition = "0 0 0"
+  }
+}
+module ComposeVector {
+  internal  {
+    frame = "-187 365 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "791 494 340 64"
+        sizeHint = "340 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ComposeVector
+    x = 0
+    y = 0
+    z = 0
+    d = 0
+  }
+}
+module DecomposeVector {
+  internal  {
+    frame = "-195 125 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "818 547 421 60"
+        sizeHint = "421 60"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "776 340 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DecomposeVector
+    v = "0 0 0 0"
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "801 -891 96 56"
+    moduleGroupName = GlassBrainView
+    windows  {
+      window _viewer {
+        geometry = "607 280 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup
+  }
+}
+module Calculator {
+  internal  {
+    frame = "-215 261 96 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "364 395 700 656"
+        sizeHint = "700 656"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "820 313 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Calculator1
+    exp1 = "floor(v1/(v2*v3))"
+    exp2 = ""
+    exp3 = ""
+    exp4 = ""
+    exp5 = ""
+    exp6 = ""
+    exp7 = ""
+    exp8 = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    v1 = "7.75551319122314 7.97650051116943 6.36590385437012"
+    v2 = "1 1 1"
+    v3 = "0 0 0"
+    v4 = "0 0 0"
+    v5 = "0 0 0"
+    v6 = "0 0 0"
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    applyMode = AutoApply
+    exp1Comment = ""
+    exp2Comment = ""
+    exp3Comment = ""
+    exp4Comment = ""
+    exp5Comment = ""
+    exp6Comment = ""
+    exp7Comment = ""
+    exp8Comment = ""
+    scalarVariablesComment = ""
+    vectorVariablesComment = ""
+    resultVector1_x = 0
+    resultVector1_y = 0
+    resultVector1_z = 0
+    resultVector2_x = 0
+    resultVector2_y = 0
+    resultVector2_z = 0
+    resultVector3_x = 0
+    resultVector3_y = 0
+    resultVector3_z = 0
+    resultVector4_x = 0
+    resultVector4_y = 0
+    resultVector4_z = 0
+    resultVector5_x = 0
+    resultVector5_y = 0
+    resultVector5_z = 0
+    resultVector6_x = 0
+    resultVector6_y = 0
+    resultVector6_z = 0
+    resultVector7_x = 0
+    resultVector7_y = 0
+    resultVector7_z = 0
+    resultVector8_x = 0
+    resultVector8_y = 0
+    resultVector8_z = 0
+  }
+}
+module SoView2DPosition {
+  internal  {
+    frame = "-855 173 144 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _automatic {
+        geometry = "126 148 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "129 105 446 725"
+        sizeHint = "446 725"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DPosition2
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = FALSE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    worldPosition = "7.75551319122314 7.97650051116943 6.36590385437012"
+    firstSliceWorldPosition = "8.32049942016602 7.91118431091309 9.22023391723633"
+    drawingModel = DRAWINGMODEL_CROSSHAIRS
+    drawingModelSize = -1
+    crossHairSpacing = 0
+    drawEditingRect = TRUE
+    blendOnto = 1
+    blendOutside = 0
+    lineWidth = 1
+    colorAxes = FALSE
+    sagittalColor = "1 0 0"
+    coronalColor = "0.172549024224281 0.886274516582489 0.0117647061124444"
+    axialColor = "0.00784313771873713 0.952941179275513 0.968627452850342"
+    updateOnPress = TRUE
+    updateOnMotion = TRUE
+    updateOnRelease = FALSE
+    cooperative = FALSE
+    colorBorder = FALSE
+    colorBorderWidth = 2
+  }
+}
+module SoView2DPosition {
+  internal  {
+    frame = "-535 37 144 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _automatic {
+        geometry = "789 160 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "584 118 446 725"
+        sizeHint = "446 725"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DPosition1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = FALSE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    worldPosition = "7.75551319122314 7.97650051116943 6.36590385437012"
+    firstSliceWorldPosition = "7.75551319122314 7.97650051116943 6.36590385437012"
+    drawingModel = DRAWINGMODEL_CROSSHAIRS
+    drawingModelSize = -1
+    crossHairSpacing = 0
+    drawEditingRect = TRUE
+    blendOnto = 1
+    blendOutside = 0
+    lineWidth = 1
+    colorAxes = FALSE
+    sagittalColor = "1 0 0"
+    coronalColor = "0.172549024224281 0.886274516582489 0.0117647061124444"
+    axialColor = "0.00784313771873713 0.952941179275513 0.968627452850342"
+    updateOnPress = TRUE
+    updateOnMotion = TRUE
+    updateOnRelease = FALSE
+    cooperative = FALSE
+    colorBorder = FALSE
+    colorBorderWidth = 2
+  }
+}
+module SoView2DPosition {
+  internal  {
+    frame = "-99 61 136 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _automatic {
+        geometry = "621 153 500 599"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "988 185 446 713"
+        sizeHint = "446 713"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DPosition
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = FALSE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    worldPosition = "7.75551319122314 7.97650051116943 6.36590385437012"
+    firstSliceWorldPosition = "8.13108253479004 7.2297158241272 9.22350025177002"
+    drawingModel = DRAWINGMODEL_CROSSHAIRS
+    drawingModelSize = -1
+    crossHairSpacing = 0
+    drawEditingRect = TRUE
+    blendOnto = 1
+    blendOutside = 0
+    lineWidth = 1
+    colorAxes = FALSE
+    sagittalColor = "1 0 0"
+    coronalColor = "0.172549024224281 0.886274516582489 0.0117647061124444"
+    axialColor = "0.00784313771873713 0.952941179275513 0.968627452850342"
+    updateOnPress = TRUE
+    updateOnMotion = TRUE
+    updateOnRelease = FALSE
+    cooperative = FALSE
+    colorBorder = FALSE
+    colorBorderWidth = 2
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "505 -131 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _automatic {
+        geometry = "172 369 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "38 89 1444 784"
+        sizeHint = "682 784"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = "Label #	Voxels	Volume(ml)
+"
+    in1 = C:/Users/Gebruiker/Desktop/testsave.txt
+    in2 = 1
+    in3 = 1
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = FALSE
+    autoApply1 = FALSE
+    autoApply2 = FALSE
+    autoApply3 = FALSE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = "Label #	Voxels	Volume(ml)
+0:	16777216.0	16777216.0
+1:	16777216.0	16777216.0
+2:	7756428.0	7756428.0
+3:	2016631.0	2016631.0
+4:	1077395.0	1077395.0
+5:	642507.0	642507.0
+6:	81801.0	81801.0
+7:	490114.0	490114.0
+8:	546644.0	546644.0
+9:	388667.0	388667.0
+10:	79677.0	79677.0
+11:	172984.0	172984.0
+12:	202229.0	202229.0
+13:	148650.0	148650.0
+14:	33297.0	33297.0
+15:	264400.0	264400.0
+16:	213368.0	213368.0
+17:	301904.0	301904.0
+18:	68486.0	68486.0
+19:	97831.0	97831.0
+20:	94587.0	94587.0
+21:	65565.0	65565.0
+22:	355593.0	355593.0
+23:	2816630.0	2816630.0
+24:	3163729.0	3163729.0
+25:	252518.0	252518.0
+26:	1277833.0	1277833.0
+27:	150235.0	150235.0
+28:	40720.0	40720.0
+29:	18488.0	18488.0
+30:	8878.0	8878.0
+31:	1395593.0	1395593.0
+32:	920959.0	920959.0
+33:	412177.0	412177.0
+34:	3158820.0	3158820.0
+35:	136218.0	136218.0
+36:	93227.0	93227.0
+37:	6046741.0	6046741.0
+"
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*import os
+
+print os.getcwd()
+
+str = ctx.field("in0").value
+dest = ctx.field("in1").value
+
+with open(dest, 'w') as f:
+	f.write(str)*"
+    showFields = TRUE
+    showInitCode = TRUE
+    showWakeUpCode = TRUE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module SoGVRVolumeRenderer {
+  internal  {
+    frame = "633 -723 176 56"
+    moduleGroupName = GlassBrainView
+    windows  {
+      window _default {
+        geometry = "855 271 341 596"
+        sizeHint = "346 596"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGVRVolumeRenderer1
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    on = TRUE
+    autoLoad = TRUE
+    interactiveQuality = 0.1
+    staticQuality = 1
+    interactiveSamplingRate = 0.30000001
+    staticSamplingRate = 1
+    blendMode = Blend
+    octreeNodeSize = NODE_SIZE_32
+    octreeParentComputationMethod = Rank
+    octreeParentComputationRank = 4
+    currentTimePoint = 0
+    maxTimePoint = 0
+    force8bit = FALSE
+    filterVolumeData = FilterLinear
+    filterLut = TRUE
+    subVolumeStartX = 0
+    subVolumeStartY = 0
+    subVolumeStartZ = 0
+    subVolumeEndX = 173
+    subVolumeEndY = 173
+    subVolumeEndZ = 173
+    zbuffer = TRUE
+    permitClipping = TRUE
+    drawOnPlanes = TRUE
+    sizeOutputX = 173
+    sizeOutputY = 173
+    sizeOutputZ = 173
+    incrementalUpdate = TRUE
+    highQualityStaticUpdate = FALSE
+    staticRenderingAfterInteractionOnly = FALSE
+    adaptQualityToWindowSize = TRUE
+    rayCastTextureStorage = RayCastTextureStorage_Auto
+    renderMode = Direct
+    useImageCacheFile = FALSE
+    imageCacheFilename = ""
+    greyCenter = 0.192
+    greyWidth = 0.123
+    greyInvert = FALSE
+    alphaCenter = 0.055
+    alphaWidth = 0.123
+    alphaInvert = FALSE
+    colorFactor = "1 1 1"
+    alphaFactor = 0.027000001
+    enhancementAlphaMix = 0.25
+    boundaryEnhancement = FALSE
+    boundaryEnhancementFactor = 1
+    boundaryEnhancementExponent = 1
+    boundaryEnhancementGradientBias = 0
+    silhouetteEnhancement = FALSE
+    silhouetteEnhancementExponent = 1
+    silhouetteEnhancementFactor = 1
+    toneShading = FALSE
+    toneShadingWarmColor = "0.674509823322296 0.533333361148834 0.141176477074623"
+    toneShadingColdColor = "0 0 0.400000005960464"
+    toneShadingWarmDiffuse = 0.60000002
+    toneShadingColdDiffuse = 0.2
+    toneShadingAngle = 45
+    materialAmbient = 0.60000002
+    materialDiffuse = 0.699
+    materialSpecular = 0.685
+    materialSpecularity = 32
+    reduceLightingOnLowGradientMagnitude = FALSE
+    light1Enabled = TRUE
+    light1DiffuseIntensity = 1
+    light1SpecularIntensity = 1
+    light1Color = "1 1 1"
+    light1PolarPhi = 0
+    light1PolarRho = 0
+    light2Enabled = FALSE
+    light2DiffuseIntensity = 1
+    light2SpecularIntensity = 1
+    light2Color = "1 1 1"
+    light2PolarPhi = 45
+    light2PolarRho = 45
+    light3Enabled = FALSE
+    light3DiffuseIntensity = 1
+    light3SpecularIntensity = 1
+    light3Color = "1 1 1"
+    light3PolarPhi = -45
+    light3PolarRho = 0
+    gradientQuality = GradientQualityAutomatic
+    selectionAlphaThreshold = 0.2
+    selectedPoint1 = "-1 -1 -1"
+    selectedWorldPoint1 = "-1 -1 -1"
+    selectionActive = FALSE
+    useWorldCoords = TRUE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "53 85 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "591 184 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "768 200 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "-699 37 136 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "1068 362 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 180 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay3
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.5
+    baseColor = "1 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "-1027 85 136 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "1068 362 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "2 146 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.5
+    baseColor = "1 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module Downsample3D {
+  internal  {
+    frame = "-151 533 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "419 279 313 323"
+        sizeHint = "313 323"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 180 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Downsample3D1
+    restriction = MaxVoxelsPerDim
+    limit = 128
+    interpolate = FALSE
+    method = Triangle/Linear
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "-267 53 136 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "752 521 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "982 165 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay2
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.5
+    baseColor = "1 0 0"
+    useWorldCoords = TRUE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module OrthoReformat3 {
+  internal  {
+    frame = "-431 245 128 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "671 501 272 256"
+        sizeHint = "272 256"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoReformat31
+    useGlobalInputImage = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "-203 -103 120 64"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "828 273 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "141 158 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxialView
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 6.38550043106079"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "-915 -87 120 64"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "912 229 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "39 770 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SagittalView
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "-1 0 0 -7.03049945831299"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module OrthoReformat3 {
+  internal  {
+    frame = "-611 237 120 56"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "671 501 272 256"
+        sizeHint = "272 256"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoReformat3
+    useGlobalInputImage = TRUE
+  }
+}
+module CalculateVolume {
+  internal  {
+    frame = "785 125 128 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "632 363 350 235"
+        sizeHint = "350 235"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CalculateVolume
+    minMode = UserDefined
+    intMin = 1
+    maxMode = ImageMax
+    intMax = 255
+    autoUpdate = TRUE
+    unit = Milliliters
+    factor = 1
+    numTimepoints = 1
+    minTimepoint = 0
+    maxTimepoint = 0
+    userTimepoint = 0
+    curveType = Line
+    curveStyle = 0
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "517 69 136 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "280 466 372 362"
+        sizeHint = "372 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 1
+    threshWidth = 1
+    threshMin = 1
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 1
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Downsample3D {
+  internal  {
+    frame = "237 549 120 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "651 319 313 323"
+        sizeHint = "313 323"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "557 180 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Downsample3D
+    restriction = MaxVoxelsPerDim
+    limit = 256
+    interpolate = FALSE
+    method = Triangle/Linear
+  }
+}
+module PrintCurves {
+  internal  {
+    frame = "321 -51 96 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "318 464 379 416"
+        sizeHint = "379 416"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "141 165 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PrintCurves
+    curveTable = "# Unknown
+
+"
+    autoUpdate = AutoUpdate
+    indentString = "# "
+    filename = ""
+    useSeparator = FALSE
+    columnSeparator = ""
+    rowSeparator = ""
+    trimCurve = FALSE
+    minX = 0
+    maxX = 100
+  }
+}
+module Histogram {
+  internal  {
+    frame = "325 29 88 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "608 303 399 354"
+        sizeHint = "399 354"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "19 327 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram
+    useMask = TRUE
+    xRange = "Image Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoUpdate
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = FALSE
+    backgroundValue = 0
+    binSize = 1
+  }
+}
+module Info {
+  internal  {
+    frame = "125 517 56 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _automatic {
+        geometry = "557 180 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "663 636 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = -1
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "89 -307 128 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _automatic {
+        geometry = "1011 254 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "-112 912 1161 784"
+        sizeHint = "682 784"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = "# Unknown
+
+"
+    in1 = 0
+    in2 = 0
+    in3 = 0
+    in4 = 16
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = FALSE
+    autoApply2 = FALSE
+    autoApply3 = FALSE
+    autoApply4 = FALSE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = "Label #	Voxels	Volume(ml)
+"
+    out1 = "0.0 12.0 16.0 18.0 19.0 20.0 27.0 28.0 29.0 30.0 32.0 34.0 64.0 65.0 85.0 86.0 90.0 91.0 92.0 93.0 94.0 95.0 96.0 97.0 98.0 99.0 101.0 103.0 104.0 107.0 108.0 110.0 111.0 112.0 1001.0 1002.0 1003.0 1004.0 1005.0 1006.0 1007.0 1008.0 1010.0 1011.0"
+    out2 = 12
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*import numpy as np
+
+hist = ctx.field("in0").value.split('\\n')[1:]
+v_vol=np.product([float(ctx.field("in1").value), float(ctx.field("in2").value), float(ctx.field("in3").value)])
+
+clist=[(float(i.split()[0]), float(i.split()[1]), float(i.split()[1])*v_vol) for i in hist if (len(i.split()) == 2 and float(i.split()[1]) > 0.0)]
+
+outstr='Label #\\tVoxels\\tVolume(ml)\\n'
+for t in clist:
+	outstr+="%s:\\t%s\\t%s\\n" %(int(t[0]), t[1], t[2])
+
+ctx.field("out0").value=outstr
+
+hlist=list(np.array(clist)[:,0])
+
+ctx.field("out2").value=int(hlist[1])
+
+hstr=str(hlist)[1:-1].replace(",","")
+ctx.field("out1").value=hstr
+
+
+*"
+    showFields = TRUE
+    showInitCode = TRUE
+    showWakeUpCode = TRUE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module Calculator {
+  internal  {
+    frame = "397 341 88 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _default {
+        geometry = "235 401 700 677"
+        sizeHint = "700 656"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Calculator
+    exp1 = i1
+    exp2 = i2/2
+    exp3 = ""
+    exp4 = ""
+    exp5 = ""
+    exp6 = ""
+    exp7 = ""
+    exp8 = ""
+    i1 = 16
+    i2 = 0
+    i3 = 12
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    v1 = "0 0 0"
+    v2 = "0 0 0"
+    v3 = "0 0 0"
+    v4 = "0 0 0"
+    v5 = "0 0 0"
+    v6 = "0 0 0"
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    applyMode = AutoApply
+    exp1Comment = ""
+    exp2Comment = ""
+    exp3Comment = ""
+    exp4Comment = ""
+    exp5Comment = ""
+    exp6Comment = ""
+    exp7Comment = ""
+    exp8Comment = ""
+    scalarVariablesComment = ""
+    vectorVariablesComment = ""
+    resultVector1_x = 0
+    resultVector1_y = 0
+    resultVector1_z = 0
+    resultVector2_x = 0
+    resultVector2_y = 0
+    resultVector2_z = 0
+    resultVector3_x = 0
+    resultVector3_y = 0
+    resultVector3_z = 0
+    resultVector4_x = 0
+    resultVector4_y = 0
+    resultVector4_z = 0
+    resultVector5_x = 0
+    resultVector5_y = 0
+    resultVector5_z = 0
+    resultVector6_x = 0
+    resultVector6_y = 0
+    resultVector6_z = 0
+    resultVector7_x = 0
+    resultVector7_y = 0
+    resultVector7_z = 0
+    resultVector8_x = 0
+    resultVector8_y = 0
+    resultVector8_z = 0
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "633 325 128 56"
+    moduleGroupName = AtlasViewer
+    windows  {
+      window _automatic {
+        geometry = "835 189 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "704 519 372 350"
+        sizeHint = "372 350"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 16
+    threshWidth = 0.5
+    threshMin = 15.75
+    threshMax = 16.25
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module SoExaminerViewer {
+  internal  {
+    frame = "517 -855 136 64"
+    moduleGroupName = GlassBrainView
+    windows  {
+      window _viewer {
+        geometry = "125 152 626 614"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GlassBrain
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    border = FALSE
+    background = "0 0 0"
+    transparency = BLEND
+    antialiasing = FALSE
+    antialiasingNumPasses = 1
+    useSampleBuffers = FALSE
+    numSamples = 8
+    grabKeyFocus = TRUE
+    snapshotFormat = SNAPSHOT_RGB
+    outputAviFile = ""
+    autoRedrawWhenRecording = TRUE
+    frameRate = 7
+    frameRateAvi = 15
+    status = ready
+    outputSnapshotFile = none
+    outputSnapshotFileWritten = none
+    autoIncreaseFile = TRUE
+    autoUpdateML = FALSE
+    showSnapshotWithShell = FALSE
+    snapCount = 0
+    inputDevicesList = ""
+    headlight = TRUE
+    decoration = TRUE
+    popupMenuEnabled = FALSE
+    viewing = TRUE
+    autoClipping = TRUE
+    drawStyle = VIEW_AS_IS
+    interactiveDrawStyle = VIEW_LOW_COMPLEXITY
+    viewAllFlag = FALSE
+    initialCameraOrientation = CAMERA_KEEP_AS_IS
+    applyCameraOrientation = CAMERA_KEEP_AS_IS
+    cameraType = CAMERA_PERSPECTIVE
+    autoApplyUserSettingOrientation = FALSE
+    userSettingOrientation = "0 0 1 0"
+    automaticViewAll = FALSE
+    storeCurrentState = TRUE
+    saveCamera = TRUE
+    cursor = TRUE
+    isCameraStored = TRUE
+    perspective = TRUE
+    stereoViewing = FALSE
+    stereoOffset = 3
+    height = 0.78539819
+    position = "307.262329101562 738.90625 -103.81258392334"
+    orientation = "0.559588670730591 0.537857711315155 0.630531072616577 3.47176551818848"
+    nearDistance = 776.02344
+    farDistance = 800.43396
+    focalDistance = 0.0099999998
+    forceRedrawOnInteraction = FALSE
+    button1events = TO_VIEWER
+    button2events = TO_VIEWER
+    button3events = TO_VIEWER
+    keyEvents = TO_VIEWER
+    animationEnabled = FALSE
+    feedback = FALSE
+    feedbackSize = 32
+    mouseInteraction = ""
+    rotationAxis = "0 1 0"
+    rotationAngle = 360
+    rotationSteps = 80
+    rotationCurrentStep = 0
+    recordRotation = TRUE
+  }
+}
+module SoGVRVolumeRenderer {
+  internal  {
+    frame = "429 -715 168 56"
+    moduleGroupName = GlassBrainView
+    windows  {
+      window _default {
+        geometry = "726 336 346 596"
+        sizeHint = "346 596"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGVRVolumeRenderer
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    on = TRUE
+    autoLoad = TRUE
+    interactiveQuality = 0.5
+    staticQuality = 1
+    interactiveSamplingRate = 0.2
+    staticSamplingRate = 1
+    blendMode = Blend
+    octreeNodeSize = NODE_SIZE_32
+    octreeParentComputationMethod = Rank
+    octreeParentComputationRank = 4
+    currentTimePoint = 0
+    maxTimePoint = 0
+    force8bit = FALSE
+    filterVolumeData = FilterLinear
+    filterLut = TRUE
+    subVolumeStartX = 0
+    subVolumeStartY = 0
+    subVolumeStartZ = 0
+    subVolumeEndX = 346
+    subVolumeEndY = 346
+    subVolumeEndZ = 346
+    zbuffer = TRUE
+    permitClipping = TRUE
+    drawOnPlanes = TRUE
+    sizeOutputX = 346
+    sizeOutputY = 346
+    sizeOutputZ = 346
+    incrementalUpdate = TRUE
+    highQualityStaticUpdate = FALSE
+    staticRenderingAfterInteractionOnly = FALSE
+    adaptQualityToWindowSize = TRUE
+    rayCastTextureStorage = RayCastTextureStorage_Auto
+    renderMode = Direct
+    useImageCacheFile = FALSE
+    imageCacheFilename = ""
+    greyCenter = 0.5
+    greyWidth = 0.5
+    greyInvert = FALSE
+    alphaCenter = 0.5
+    alphaWidth = 0.5
+    alphaInvert = FALSE
+    colorFactor = "1 0.156862750649452 0.00784313771873713"
+    alphaFactor = 1
+    enhancementAlphaMix = 0.25
+    boundaryEnhancement = FALSE
+    boundaryEnhancementFactor = 1
+    boundaryEnhancementExponent = 1
+    boundaryEnhancementGradientBias = 0
+    silhouetteEnhancement = FALSE
+    silhouetteEnhancementExponent = 1
+    silhouetteEnhancementFactor = 1
+    toneShading = FALSE
+    toneShadingWarmColor = "0.674509823322296 0.533333361148834 0.141176477074623"
+    toneShadingColdColor = "0 0 0.400000005960464"
+    toneShadingWarmDiffuse = 0.60000002
+    toneShadingColdDiffuse = 0.2
+    toneShadingAngle = 45
+    materialAmbient = 0.60000002
+    materialDiffuse = 1
+    materialSpecular = 1
+    materialSpecularity = 32
+    reduceLightingOnLowGradientMagnitude = FALSE
+    light1Enabled = TRUE
+    light1DiffuseIntensity = 1
+    light1SpecularIntensity = 1
+    light1Color = "1 1 1"
+    light1PolarPhi = 0
+    light1PolarRho = 0
+    light2Enabled = FALSE
+    light2DiffuseIntensity = 1
+    light2SpecularIntensity = 1
+    light2Color = "1 1 1"
+    light2PolarPhi = 45
+    light2PolarRho = 45
+    light3Enabled = FALSE
+    light3DiffuseIntensity = 1
+    light3SpecularIntensity = 1
+    light3Color = "1 1 1"
+    light3PolarPhi = -45
+    light3PolarRho = 0
+    gradientQuality = GradientQualityAutomatic
+    selectionAlphaThreshold = 0.2
+    selectedPoint1 = "-1 -1 -1"
+    selectedWorldPoint1 = "-1 -1 -1"
+    selectionActive = FALSE
+    useWorldCoords = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "-571 -103 104 64"
+    moduleGroupName = "2D Viewer"
+    windows  {
+      window _default {
+        geometry = "104 196 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "68 181 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CoronalView
+    inventorInputOn = FALSE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 1 0 7.97650051116943"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+connections  {
+  RunPythonScript3.out0 = RunPythonScript2.out0
+  RunPythonScript2.in0 = RunPythonScript.out1
+  RunPythonScript2.in1 = RunPythonScript.in4
+  OrthoSwapFlip.flipHorizontal = OrthoSwapFlip1.flipHorizontal
+  OrthoSwapFlip.flipVertical = OrthoSwapFlip1.flipVertical
+  OrthoSwapFlip.flipDepth = OrthoSwapFlip1.flipDepth
+  Downsample3D2.inImage = IntervalThreshold.output0
+  ImageSave1.input0 = IntervalThreshold.output0
+  ImageSave1.postfix = ImageSave.postfix
+  Histogram1.input0 = Arithmetic.output0
+  Histogram1.update = CSOConvertToImage.apply
+  PrintCurves1.inCurveList = Histogram1.outputHistogramCurve
+  ImageSave.input0 = Arithmetic.output0
+  ImageSave.filename = ImageSave1.filename
+  Mask1.input0 = Mask.output0
+  Mask1.input1 = CSOConvertToImage.output0
+  Arithmetic.input0 = Mask1.output0
+  Arithmetic.input1 = CSOConvertToImage.output0
+  Arithmetic.i1 = Calculator.resultScalar1
+  Mask.input0 = OrthoSwapFlip.output0
+  Mask.input1 = IntervalThreshold.output0
+  CSOConvertToImage.input0 = IntervalThreshold.output0
+  CSOConvertToImage.inCSOList = CSOManager.outCSOList
+  SoView2DCSOEditor.inCSOList = CSOManager.outCSOList
+  SoView2DCSOEditor.inProcessor = CSOBulgeProcessor1.outProcessorData
+  View2D.inImage = OrthoSwapFlip1.output0
+  View2D.inInvPreLUT = SoView2DCSOEditor.self
+  CSOIsoGenerator.input0 = IntervalThreshold.output0
+  CSOIsoGenerator.inCSOList = CSOManager.outCSOList
+  ComposeVector.x = Info.voxelSizeX
+  ComposeVector.y = Info.voxelSizeY
+  ComposeVector.z = Info.voxelSizeZ
+  DecomposeVector.v = Calculator1.resultVector1
+  SoGroup.children = "SoGVRVolumeRenderer.self SoGVRVolumeRenderer1.self"
+  Calculator1.v1 = SoView2DPosition2.worldPosition
+  Calculator1.v2 = Downsample3D1.scaling
+  Calculator1.v3 = ComposeVector.v
+  SoView2DPosition2.worldPosition = SoView2DPosition1.worldPosition
+  SoView2DPosition1.worldPosition = SoView2DPosition.worldPosition
+  SoView2DPosition.worldPosition = SoView2DPosition2.worldPosition
+  RunPythonScript1.in0 = RunPythonScript.out0
+  SoGVRVolumeRenderer1.image = IntervalThreshold1.output0
+  ImageStatistics.input0 = Downsample3D1.outImage
+  SoView2DOverlay3.image = OrthoReformat31.output1
+  SoView2DOverlay1.image = OrthoReformat31.output0
+  SoView2DOverlay1.alphaFactor = SoView2DOverlay3.alphaFactor
+  Downsample3D1.inImage = OrthoSwapFlip1.output0
+  SoView2DOverlay2.image = OrthoReformat31.output2
+  SoView2DOverlay2.alphaFactor = SoView2DOverlay3.alphaFactor
+  OrthoReformat31.input0 = Downsample3D2.outImage
+  AxialView.inImage = OrthoReformat3.output2
+  AxialView.inInvPreLUT = SoView2DOverlay2.self
+  AxialView.inInvPostLUT = SoView2DPosition.self
+  AxialView.startSlice = DecomposeVector.z
+  SagittalView.inImage = OrthoReformat3.output0
+  SagittalView.inInvPreLUT = SoView2DOverlay1.self
+  SagittalView.inInvPostLUT = SoView2DPosition2.self
+  SagittalView.startSlice = DecomposeVector.x
+  OrthoReformat3.input0 = Downsample3D1.outImage
+  CalculateVolume.input0 = IntervalThreshold.output0
+  IntervalThreshold1.input0 = Downsample3D.outImage
+  Downsample3D.inImage = OrthoSwapFlip.output0
+  PrintCurves.inCurveList = Histogram.outputHistogramCurve
+  PrintCurves.curveTable = PrintCurves1.curveTable
+  Histogram.input0 = OrthoSwapFlip.output0
+  Info.input0 = OrthoSwapFlip.output0
+  RunPythonScript.in0 = PrintCurves.curveTable
+  RunPythonScript.in1 = Info.voxelSizeX
+  RunPythonScript.in2 = Info.voxelSizeY
+  RunPythonScript.in3 = Info.voxelSizeZ
+  RunPythonScript.in4 = Calculator.resultScalar1
+  Calculator.i1 = RunPythonScript3.out0
+  Calculator.i2 = ImageStatistics.totalMaxVal
+  Calculator.i3 = RunPythonScript.out2
+  IntervalThreshold.input0 = OrthoSwapFlip.output0
+  IntervalThreshold.threshCenter = Calculator.resultScalar1
+  GlassBrain.children = SoGroup.self
+  SoGVRVolumeRenderer.image = IntervalThreshold.output0
+  CoronalView.inImage = OrthoReformat3.output1
+  CoronalView.inInvPreLUT = SoView2DOverlay3.self
+  CoronalView.inInvPostLUT = SoView2DPosition1.self
+  CoronalView.startSlice = DecomposeVector.y
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 129
+        objectName = "2D Viewer"
+        parentUniqueId = 0
+        frame = "-1052 -178 1114 520"
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 145
+        objectName = GlassBrainView
+        parentUniqueId = 0
+        frame = "404 -966 518 332"
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 208
+        objectName = "CSO editor"
+        parentUniqueId = 0
+        frame = "960 -118 670 540"
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 275
+        objectName = Recalculate
+        parentUniqueId = 0
+        frame = "1156 -1022 510 796"
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+Interface  {
+  Inputs  {
+    Field input0 {
+      internalName = OrthoSwapFlip1.input0
+    }
+    Field input1 {
+      internalName = OrthoSwapFlip.input0
+    }
+
+  }
+  Outputs {}
+  Parameters {
+    Field numLabels        { internalName = ImageStatistics.totalMaxVal }
+    Field labelValues { internalName = RunPythonScript.out1}
+    Field currentLabel        { internalName = Calculator.i1 min = Calculator.i3 max =  numLabels values = labelValues }
+    Field labelVolume        { internalName = CalculateVolume.totalVolume editable = False }
+    Field outputString      { internalName = RunPythonScript.out0 }
+    Field savePath { internalName = RunPythonScript1.in1}
+    Field Save { internalName = RunPythonScript1.execute}
+    Field ClearCSO { internalName = CSOManager.removeAllCSOsAndGroups }
+    Field UpdateStats { internalName = CSOConvertToImage.apply}
+    Field LoadCSO { internalName = CSOIsoGenerator.apply}
+    Field SaveLabels { internalName = ImageSave.save}
+  }
+}
+
+Window "AtlasViewer" {
+  Category "Visualization" {
+    style = Panel.default
+    w     = 800 mw = 800 pw = 800
+    h     = 400 mh = 400 ph = 400
+    //wakeupCommand = startApplication
+    shouldCloseCommand = stopApplication 
+    expandY            = Yes
+    expandX            = Yes
+    //wakeupCommand = startApplication  
+    Vertical {
+      Horizontal {
+        Panel{
+          module = AxialView  
+        }
+        Panel {
+          module = CoronalView 
+        }
+      }
+      Horizontal {
+        Panel {
+          module = SagittalView
+        }
+        Viewer SoGroup.self {
+          name  = GlassBrain
+          clone = NO
+        }
+      }
+      Horizontal {
+        Button RunPythonScript2.execute { title = "<<" }
+        Field currentLabel {
+          step=1
+        }
+        Button RunPythonScript3.execute { title = ">>" }
+        Field labelVolume {}
+       
+      }
+    }
+  }
+  Category "CSO editor" {
+    Vertical {
+      Panel {
+        module=View2D
+        stretchY = True
+      }
+      Horizontal {
+        Button ClearCSO {}
+        Button UpdateStats {}
+        Button LoadCSO {}
+      }
+      Horizontal {
+        Field ImageSave.postfix {}
+        Field ImageSave.filename {}
+        Button SaveLabels {}
+      }
+    }
+  }
+  Category "Label Stats" {
+    Vertical {
+      textView outputString {
+        style { editFont { family = Courier } }
+        title = "Label Stats"
+        mw    = 600
+        mh    = 500
+        edit  = no
+      }
+      Horizontal {
+        Field savePath { 
+          browseButton = Yes 
+          browseMode   = save
+          title        = "Save as: "
+          expandX      = yes
+      }
+       Button Save {}
+    }
+  }
+}

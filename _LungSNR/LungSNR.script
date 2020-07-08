@@ -1,0 +1,216 @@
+//----------------------------------------------------------------------------------
+//! Macro module LungSNR
+/*!
+// \file    LungSNR.script
+// \author  Kristof Govaerts
+// \date    2013-06-20
+//
+// 
+*/
+//----------------------------------------------------------------------------------
+
+
+Interface {
+  Inputs {
+
+  }
+  Outputs {}
+  Parameters {    
+    Field sourcePath { internalName = ImageLoad.filename }
+    Field imageMin     { internalName = IntervalThreshold1.imageMin }
+    Field imageMax     { internalName = IntervalThreshold1.imageMax }
+    Field threshMin { internalName = IntervalThreshold1.threshMin }
+    Field threshMax { internalName = IntervalThreshold1.threshMax }
+    Field lowerType { internalName = IntervalThreshold1.lowerType }
+    Field innerType { internalName = IntervalThreshold1.innerType }
+    Field upperType { internalName = IntervalThreshold1.upperType }
+    Field lowerUserValue { internalName = IntervalThreshold1.lowerUserValue }
+    Field innerUserValue { internalName = IntervalThreshold1.innerUserValue }
+    Field upperUserValue { internalName = IntervalThreshold1.upperUserValue }
+    Field stepSize { type = Float min = 1 max = imageMax }
+    Field modelRico { internalName = Calculator.d1 }
+    Field modelSlope { InternalName = Calculator.d2 }
+    Field modelOffset { InternalName = Calculator.d3 }
+    Field autoThresh { type = Bool }
+    Field removeROIs { internalName = CSOManager1.removeAllCSOsAndGroups }
+    Field removeCurr { internalName = CSOManager1.csoRemoveSelected }
+    Field SNR { internalName = Output.resultScalar1 }
+    Field Vratio { internalName = Output.resultScalar2 }
+    Field roivoxels { internalName = RunPythonScript.in3 }
+    Field roithreshvoxels { internalName = RunPythonScript.in4 }
+    Field meanSI { internalName = Output.d1 }
+    Field save { internalName = RunPythonScript.execute }
+    Field targetPath { internalName = RunPythonScript.in8 }
+    Field targetName { internalName = RunPythonScript.in9 }
+    
+    
+    
+  }
+}
+
+
+Commands {
+}
+
+Window "LungSNR" {
+
+  style = Panel.default
+  w     = 800 mw = 800 pw = 800
+  h     = 830 mh = 830 ph = 830
+  //wakeupCommand = startApplication
+  //shouldCloseCommand = stopApplication 
+  expandY            = Yes
+  expandX            = Yes
+  //wakeupCommand = startApplication  
+  
+  Category "ROI and Threshold" {
+    Vertical {
+      Horizontal {
+      Box "File selection" {
+        Field sourcePath { 
+          browseButton = Yes 
+          browseMode   = open
+          title        = "File: "
+          expandX      = yes
+        }
+      }
+        
+        Box "Load ROIs" {
+          Field CSOLoad.fileName {
+            browseButton = Yes
+            browseMode = open
+            title = "Load: "
+            expandX = Yes
+          }}
+      }
+      Box "Draw ROI" {
+        expandY = yes
+        expandX = yes
+        Vertical {
+
+        Panel {
+          module = DrawROI}
+          
+          Horizontal {
+            Button removeCurr {title = "Delete current ROI"}
+            Button removeROIs {title = "Delete all ROIs"}}
+          
+        }
+        }
+
+      Horizontal {
+        Box "Threshold" {
+          Vertical{    
+            
+            CheckBox autoThresh {
+              title = "Define threshold automatically?"
+            }
+            Box "Manual threshold" {
+            IntervalSlider { expandY = yes
+              lowerField = IntervalThreshold1.threshMin
+              upperField = IntervalThreshold1.threshMax
+              dependsOn = !autoThresh
+            }
+            Horizontal {
+
+              Field threshMin {
+                expandX = yes
+                title   = Min:
+                step    = 1
+                stepstep = 100 
+                dependsOn = !autoThresh
+              }
+              Field threshMax {
+                expandX = yes
+                title   = Max:
+                step    = 1
+                stepstep = 100   
+                dependsOn = !autoThresh
+              }
+            }
+            }
+            
+            Box "Automatic threshold" {
+              Vertical {
+              Horizontal {
+
+                Field modelRico {edit = yes title = "Noise *" dependsOn = autoThresh}
+                Field modelSlope {edit = yes title = "+ stdNoise *" dependsOn = autoThresh}
+                Field modelOffset {edit = yes title = + dependsOn = autoThresh}
+                Field threshMin {edit = no title = "=" dependsOn = autoThresh}
+                
+              }
+                Horizontal {
+                Field StdDevNoise.totalMean {edit = no title = Noise:}
+                  Field StdDevNoise.totalStdDev {edit = no title = StdNoise:}
+                }
+              }
+            }
+          }
+        }
+          Vertical {
+            Box "ROI saving options" {
+              Panel { module = CSOSave }}
+            
+        Box "Output Fill Values" {
+          Table { alignX = left
+            Row  {
+              Field lowerType      { title = "Below Value:" }
+              Field lowerUserValue { title = "User Def.:" dependsOn = "* lowerType == "UserDef" *" }
+            }
+            Row  {
+              Field innerType      { title = "Inner Value:" }
+              Field innerUserValue { title = "User Def.:" dependsOn = "* innerType == "UserDef" *" }
+            }
+            Row  {
+              Field upperType      { title = "Above Value:" }
+              Field upperUserValue { title = "User Def.:" dependsOn = "* upperType == "UserDef" *" }
+            }
+            }
+          }
+        }
+      }
+    }
+      }  
+  
+  
+  Category "Noise ROI" {
+  Vertical {
+    Box "File selection" {
+      Field sourcePath { 
+        browseButton = Yes 
+        browseMode   = open
+        title        = "File: "
+        expandX      = yes
+      }
+    }
+        Panel {
+            module = ROISelect           
+          }
+  }
+  }
+  
+  Category "Output" {  
+    Vertical {
+      Box "Calculated Values" {
+      Field roivoxels { title = "# voxels in ROI:" edit = no  expandX = Yes }
+      Field roithreshvoxels { title = "# voxels after threshold:" edit = no expandX = Yes}
+      Field Vratio { title = "#voxels after threshold/#voxels before threshold:" edit = no expandX = Yes}
+      Field SNR { title = SNR: edit = no expandX = Yes}
+      Field RunPythonScript.out0 { title = "Mean SI of noise" edit = no expandX = Yes }
+      Field RunPythonScript.in5 { title = "Std. Dev of noise" edit = no expandX = Yes }
+      Field ImageStatistics.totalMean { title = "Mean SI before threshold:" edit = no expandX = Yes}
+      Field meanSI { title = "mean SI after threshold:" edit = no expandX = Yes }
+      }
+      Field targetPath { 
+        browseButton = Yes 
+        browseMode   = directory
+        title        = "Save in:"
+        expandX      = yes
+      }
+      Field targetName { title = Filename: expandX = Yes}
+      Button save { title = "Save" }
+      
+     }
+    }
+    }
